@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Nav from "./components/Nav";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -12,9 +13,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="h-full">
+    <html lang="en" className="h-full" data-scroll-behavior="smooth">
       <body className="min-h-full flex flex-col antialiased">
-        {children}
+        <Nav />
+        <main className="flex-1" style={{ paddingTop: '72px' }}>
+          {children}
+        </main>
       </body>
     </html>
   );
