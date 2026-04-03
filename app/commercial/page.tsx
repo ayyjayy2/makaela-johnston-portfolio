@@ -62,7 +62,6 @@ export default function Commercial() {
       >
         <div className="container">
           <div className="page-header">
-            <p className="eyebrow">Selected Work</p>
             <h1 className="section-title">
               Commercial<br /><em>Projects</em>
             </h1>
