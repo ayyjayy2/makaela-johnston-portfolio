@@ -55,7 +55,7 @@ export default function Commercial() {
   return (
     <div>
 
-      {/* ── Page Header ─────────────────────────────────────────── */}
+      {/* ── Header + Grid ───────────────────────────────────────── */}
       <section
         className="section-dark"
         style={{ paddingTop: 'calc(var(--nav-height) + clamp(3rem, 8vw, 6rem))' }}
@@ -66,12 +66,6 @@ export default function Commercial() {
               Commercial<br /><em>Projects</em>
             </h1>
           </div>
-        </div>
-      </section>
-
-      {/* ── Grid ────────────────────────────────────────────────── */}
-      <section className="section-dark" style={{ paddingTop: '0' }}>
-        <div className="container">
           <div className="projects-grid">
             {projects.map((project) => (
               <ProjectCard key={project.slug} {...project} />
