@@ -49,12 +49,12 @@ export default function HomeHero() {
               Narrative <span aria-hidden="true">→</span>
             </Link>
           </div>
-        </div>
 
-        {/* Scroll indicator — pinned to bottom of hero */}
-        <div className="hero-scroll" aria-hidden="true">
-          <div className="hero-scroll-line" />
-          <span className="hero-scroll-label">Scroll</span>
+          {/* Scroll indicator — pinned to bottom of hero-content */}
+          <div className="hero-scroll" aria-hidden="true">
+            <div className="hero-scroll-line" />
+            <span className="hero-scroll-label">Scroll</span>
+          </div>
         </div>
 
         {/* Right — photo */}
