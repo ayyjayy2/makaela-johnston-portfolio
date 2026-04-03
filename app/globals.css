@@ -391,6 +391,23 @@ ul { list-style: none; }
   z-index: 1;
 }
 .project-card:hover .project-card-overlay { opacity: 1; }
+.project-card-cta {
+  position: absolute;
+  bottom: 1.25rem;
+  right: 1.25rem;
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--beige);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.project-card-cta::after {
+  content: '→';
+}
 .project-card-image img {
   transition: transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
 }
