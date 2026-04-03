@@ -27,6 +27,9 @@ export default function HomeHero() {
       {/* ── Hero ─────────────────────────────────────────────── */}
       <section className="hero" aria-label="Hero">
 
+        {/* Gradient veil — keeps nav readable over photo */}
+        <div className="hero-veil" aria-hidden="true" />
+
         {/* Left — content */}
         <div className="hero-content">
           <p className="hero-eyebrow">Chicago · Film · Television · Commercial</p>
