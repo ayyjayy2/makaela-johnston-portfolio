@@ -1,0 +1,49 @@
+name: Sync Notes to Wiki
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'notes/**'
+
+jobs:
+  sync-wiki:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Clone wiki
+        run: |
+          git clone https://x-access-token:${{ secrets.PROJECT_TOKEN }}@github.com/ayyjayy2/makaela-johnston-portfolio.wiki.git /tmp/wiki
+
+      - name: Copy notes to wiki
+        run: |
+          cp notes/plan.md          /tmp/wiki/Development-Plan.md
+          cp notes/design-system.md /tmp/wiki/Design-System.md
+
+          # Auto-add any new notes/*.md files using filename as wiki page title
+          for f in notes/*.md; do
+            base=$(basename "$f" .md)
+            # Skip files already handled above
+            if [[ "$base" != "plan" && "$base" != "design-system" ]]; then
+              # Convert kebab-case to Title-Case for wiki filename
+              title=$(echo "$base" | sed 's/-/ /g' | awk '{for(i=1;i<=NF;i++) $i=toupper(substr($i,1,1)) substr($i,2)}1' | sed 's/ /-/g')
+              cp "$f" "/tmp/wiki/${title}.md"
+            fi
+          done
+
+      - name: Commit and push wiki
+        run: |
+          cd /tmp/wiki
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          # Only commit if there are changes
+          if git diff --staged --quiet; then
+            echo "No wiki changes to commit."
+          else
+            git commit -m "Sync notes from repo [skip ci]"
+            git push
+          fi
