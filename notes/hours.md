@@ -6,9 +6,9 @@
 
 | Category | Hours |
 |----------|-------|
-| Development (Claude sessions) | ~5h |
+| Development (Claude sessions) | ~5h 49m |
 | Planning & Collaboration | — |
-| **Total** | **~5h** |
+| **Total** | **~5h 49m** |
 
 ---
 
@@ -16,8 +16,8 @@
 
 ### April 2026
 
-#### 2026-04-03 — Dev Session (~5h)
-**Time:** 11:05 AM – 4:03 PM EDT
+#### 2026-04-03 — Dev Session (~5h 49m)
+**Time:** 11:05 AM – 4:54 PM EDT
 **Type:** Development
 
 **Work Completed:**
@@ -30,7 +30,10 @@
 - Bug fixes — hero grid layout broken by CSS pseudo-element conflict, nav gradient veil for readability, quote section centering
 - Project card component — reusable card with 16:9 image, hover overlay, "View Project →" CTA
 - Commercial page — 3-column grid with all 6 commercial projects, responsive layout
-- Narrative page — in progress
+- Narrative page — 3-column grid with all 5 narrative credits, responsive layout
+- Project detail page — dynamic route template for all 11 projects with metadata, hero image, gallery, and prev/next navigation
+- Working hours log — created and structured `notes/hours.md`
+- Project documentation — converted and committed the project brief PDF to the repo
 
 ---
 
