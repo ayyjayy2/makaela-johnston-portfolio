@@ -348,12 +348,13 @@ ul { list-style: none; }
 }
 .project-detail-back {
   font-family: var(--font-body);
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: 500;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--moss-green);
+  color: rgba(131, 153, 88, 0.5);
   transition: opacity 150ms ease;
+  margin-bottom: 1.5rem;
 }
 .project-detail-back:hover { opacity: 0.7; }
 .project-detail-main-image {
