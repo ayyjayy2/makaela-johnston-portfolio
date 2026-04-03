@@ -92,6 +92,69 @@ img {
   display: block;
 }
 
+/* Shared typography utilities */
+.eyebrow {
+  font-family:    var(--font-body);
+  font-size:      var(--text-small);
+  font-weight:    500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color:          var(--color-moss-green);
+}
+
+.about-display-heading {
+  font-family:    var(--font-heading);
+  font-size:      var(--text-h1);
+  font-weight:    300;
+  line-height:    1.1;
+  color:          var(--color-dark-green);
+  margin-top:     1rem;
+  letter-spacing: -0.01em;
+}
+.about-display-heading em {
+  font-style:  italic;
+  font-weight: 400;
+}
+
+.about-rule {
+  width:            3rem;
+  height:           1px;
+  background-color: var(--color-rosy-brown);
+  margin-top:       2rem;
+}
+
+.about-bio {
+  font-family: var(--font-body);
+  font-size:   1.125rem;
+  font-weight: 400;
+  color:       var(--color-text-primary);
+  line-height: 1.8;
+  max-width:   60ch;
+}
+
+/* Credits row */
+.credit-row {
+  border-bottom: 1px solid rgba(247,244,213,0.15);
+  transition:    background-color 200ms ease;
+}
+.credit-row:hover {
+  background-color: rgba(247,244,213,0.04);
+}
+.credit-row-inner {
+  display:         flex;
+  align-items:     center;
+  justify-content: space-between;
+  gap:             1rem;
+  padding:         1.25rem 0;
+}
+.credit-meta {
+  display:        flex;
+  flex-direction: column;
+  align-items:    flex-end;
+  gap:            0.25rem;
+  flex-shrink:    0;
+}
+
 /* Button utilities */
 .btn-primary {
   display: inline-flex;
