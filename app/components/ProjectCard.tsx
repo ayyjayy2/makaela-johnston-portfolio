@@ -27,7 +27,9 @@ export default function ProjectCard({ title, slug, category, role, client, image
         ) : (
           <div className="project-card-placeholder" />
         )}
-        <div className="project-card-overlay" />
+        <div className="project-card-overlay">
+          <span className="project-card-cta">View Project</span>
+        </div>
       </div>
 
       <div className="project-card-body">
