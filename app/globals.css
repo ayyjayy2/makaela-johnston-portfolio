@@ -163,14 +163,14 @@ ul { list-style: none; }
 }
 
 /* Top gradient veil — keeps nav links readable over any photo tone */
-.hero::before {
-  content: '';
+.hero-veil {
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 160px;
   background: linear-gradient(to bottom, rgba(10,51,35,0.75) 0%, transparent 100%);
   z-index: 2;
   pointer-events: none;
+  grid-column: 1 / -1;
 }
 
 .hero-content {
