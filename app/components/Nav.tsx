@@ -14,153 +14,129 @@ const links = [
 ];
 
 export default function Nav() {
-  const pathname  = usePathname();
+  const pathname                = usePathname();
   const [open,     setOpen]     = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  // Add background when scrolled past hero
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
+    const onScroll = () => setScrolled(window.scrollY > 60);
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  // Close menu on route change
   useEffect(() => { setOpen(false); }, [pathname]);
 
-  // Lock body scroll when mobile menu is open
   useEffect(() => {
     document.body.style.overflow = open ? 'hidden' : '';
     return () => { document.body.style.overflow = ''; };
   }, [open]);
 
+  const elevated = scrolled || open;
+
   return (
     <header
-      className="fixed top-0 left-0 right-0 z-[30] transition-all duration-300"
+      className="fixed top-0 left-0 right-0"
       style={{
-        backgroundColor: scrolled || open ? 'rgba(247,244,213,0.92)' : 'transparent',
-        backdropFilter:   scrolled || open ? 'blur(12px)'             : 'none',
-        borderBottom:     scrolled || open ? '1px solid rgba(131,153,88,0.25)' : 'none',
+        zIndex:          'var(--z-nav)',
+        backgroundColor: elevated ? 'rgba(247,244,213,0.95)' : 'transparent',
+        backdropFilter:  elevated ? 'blur(16px) saturate(180%)' : 'none',
+        borderBottom:    elevated ? '1px solid var(--color-border)' : '1px solid transparent',
+        transition:      'background-color 400ms ease, border-color 400ms ease, backdrop-filter 400ms ease',
       }}
     >
       <nav
-        className="max-w-6xl mx-auto px-6 flex items-center justify-between"
+        className="max-w-6xl mx-auto px-6 lg:px-8 flex items-center justify-between"
         style={{ height: '72px' }}
         aria-label="Main navigation"
       >
-        {/* Logo */}
+        {/* Wordmark */}
         <Link
           href="/"
-          className="cursor-pointer"
           style={{
-            fontFamily: 'var(--font-heading)',
-            fontSize:   '1.125rem',
-            fontWeight: 500,
-            color:      'var(--color-dark-green)',
-            letterSpacing: '0.02em',
-            transition: 'color var(--transition-fast)',
+            fontFamily:    'var(--font-heading)',
+            fontSize:      '1rem',
+            fontWeight:    400,
+            letterSpacing: '0.08em',
+            textTransform: 'uppercase',
+            color:         'var(--color-dark-green)',
           }}
         >
           Makaela Johnston
         </Link>
 
-        {/* Desktop nav */}
-        <ul className="hidden md:flex items-center gap-8 list-none m-0 p-0">
-          {links.map(({ href, label }) => {
-            const active = pathname === href;
-            return (
-              <li key={href}>
-                <Link
-                  href={href}
-                  className="cursor-pointer relative"
-                  style={{
-                    fontFamily:    'var(--font-body)',
-                    fontSize:      '0.9rem',
-                    fontWeight:    active ? 500 : 400,
-                    color:         active ? 'var(--color-dark-green)' : 'var(--color-text-muted)',
-                    letterSpacing: '0.03em',
-                    transition:    'color var(--transition-fast)',
-                    paddingBottom: '2px',
-                    borderBottom:  active ? '1px solid var(--color-rosy-brown)' : '1px solid transparent',
-                  }}
-                  onMouseEnter={e => {
-                    if (!active) (e.currentTarget as HTMLElement).style.color = 'var(--color-dark-green)';
-                  }}
-                  onMouseLeave={e => {
-                    if (!active) (e.currentTarget as HTMLElement).style.color = 'var(--color-text-muted)';
-                  }}
-                >
-                  {label}
-                </Link>
-              </li>
-            );
-          })}
+        {/* Desktop links */}
+        <ul className="hidden md:flex items-center gap-10 list-none">
+          {links.filter(l => l.href !== '/').map(({ href, label }) => (
+            <li key={href}>
+              <Link
+                href={href}
+                className={`nav-link${pathname === href ? ' active' : ''}`}
+              >
+                {label}
+              </Link>
+            </li>
+          ))}
         </ul>
 
-        {/* Mobile hamburger */}
+        {/* Mobile toggle */}
         <button
+          className="md:hidden flex flex-col justify-center items-center w-10 h-10 gap-[6px]"
           onClick={() => setOpen(o => !o)}
-          className="md:hidden cursor-pointer flex flex-col justify-center items-center gap-[5px] w-10 h-10"
           aria-label={open ? 'Close menu' : 'Open menu'}
           aria-expanded={open}
-          style={{ background: 'none', border: 'none', padding: '4px' }}
+          style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}
         >
-          <span
-            className="block w-6 h-px transition-all duration-300 origin-center"
-            style={{
-              backgroundColor: 'var(--color-dark-green)',
-              transform: open ? 'translateY(6px) rotate(45deg)' : 'none',
-            }}
-          />
-          <span
-            className="block w-6 h-px transition-all duration-300"
-            style={{
-              backgroundColor: 'var(--color-dark-green)',
-              opacity: open ? 0 : 1,
-              transform: open ? 'scaleX(0)' : 'none',
-            }}
-          />
-          <span
-            className="block w-6 h-px transition-all duration-300 origin-center"
-            style={{
-              backgroundColor: 'var(--color-dark-green)',
-              transform: open ? 'translateY(-6px) rotate(-45deg)' : 'none',
-            }}
-          />
+          {[0, 1, 2].map((i) => (
+            <span
+              key={i}
+              className="block transition-all duration-300 origin-center"
+              style={{
+                width:           i === 1 ? (open ? '0' : '1.5rem') : '1.5rem',
+                height:          '1px',
+                backgroundColor: 'var(--color-dark-green)',
+                transform:
+                  i === 0 ? (open ? 'translateY(7px) rotate(45deg)' : 'none') :
+                  i === 2 ? (open ? 'translateY(-7px) rotate(-45deg)' : 'none') :
+                  'none',
+                opacity:         i === 1 ? (open ? 0 : 1) : 1,
+              }}
+            />
+          ))}
         </button>
       </nav>
 
       {/* Mobile menu */}
       <div
-        className="md:hidden overflow-hidden transition-all duration-300"
+        className="md:hidden"
         style={{
-          maxHeight:  open ? '400px' : '0',
-          opacity:    open ? 1 : 0,
-          borderTop:  open ? '1px solid rgba(131,153,88,0.25)' : 'none',
+          maxHeight:       open ? '100vh' : '0',
+          overflow:        'hidden',
+          transition:      'max-height 400ms cubic-bezier(0.16,1,0.3,1)',
+          borderTop:       open ? '1px solid var(--color-border)' : 'none',
+          backgroundColor: 'rgba(247,244,213,0.98)',
         }}
         aria-hidden={!open}
       >
-        <ul className="list-none m-0 px-6 py-6 flex flex-col gap-5">
-          {links.map(({ href, label }) => {
-            const active = pathname === href;
-            return (
-              <li key={href}>
-                <Link
-                  href={href}
-                  className="cursor-pointer block"
-                  style={{
-                    fontFamily: 'var(--font-heading)',
-                    fontSize:   '1.25rem',
-                    fontWeight: active ? 500 : 300,
-                    color:      active ? 'var(--color-dark-green)' : 'var(--color-text-muted)',
-                    transition: 'color var(--transition-fast)',
-                  }}
-                >
-                  {label}
-                </Link>
-              </li>
-            );
-          })}
+        <ul className="list-none px-6 py-8 flex flex-col gap-6">
+          {links.map(({ href, label }) => (
+            <li key={href}>
+              <Link
+                href={href}
+                style={{
+                  fontFamily:    'var(--font-heading)',
+                  fontSize:      'clamp(1.5rem, 6vw, 2.5rem)',
+                  fontWeight:    pathname === href ? 300 : 100,
+                  fontStyle:     pathname === href ? 'normal' : 'italic',
+                  color:         pathname === href ? 'var(--color-dark-green)' : 'var(--color-text-muted)',
+                  letterSpacing: '-0.01em',
+                  display:       'block',
+                  transition:    'color var(--transition-fast)',
+                }}
+              >
+                {label}
+              </Link>
+            </li>
+          ))}
         </ul>
       </div>
     </header>
