@@ -351,7 +351,7 @@ ul { list-style: none; }
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: clamp(1.5rem, 3vw, 2.5rem);
+  gap: clamp(0.75rem, 1.5vw, 1.25rem);
   padding-bottom: clamp(4rem, 8vw, 7rem);
 }
 
@@ -365,7 +365,7 @@ ul { list-style: none; }
 }
 .project-card-image {
   position: relative;
-  aspect-ratio: 3 / 2;
+  aspect-ratio: 16 / 9;
   overflow: hidden;
   background-color: var(--midnight-green);
 }
