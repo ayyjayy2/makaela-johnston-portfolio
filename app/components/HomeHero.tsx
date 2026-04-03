@@ -50,11 +50,12 @@ export default function HomeHero() {
             </Link>
           </div>
 
-          {/* Scroll indicator — pinned to bottom of hero-content */}
-          <div className="hero-scroll" aria-hidden="true">
-            <div className="hero-scroll-line" />
-            <span className="hero-scroll-label">Scroll</span>
-          </div>
+        </div>
+
+        {/* Scroll indicator — absolutely positioned over hero */}
+        <div className="hero-scroll" aria-hidden="true">
+          <div className="hero-scroll-line" />
+          <span className="hero-scroll-label">Scroll</span>
         </div>
 
         {/* Right — photo */}
