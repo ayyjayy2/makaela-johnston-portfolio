@@ -6,15 +6,28 @@
 
 | Category | Hours |
 |----------|-------|
-| Development (Claude sessions) | ~5h 49m |
+| Development (Claude sessions) | ~6h 15m |
 | Planning & Collaboration | — |
-| **Total** | **~5h 49m** |
+| **Total** | **~6h 15m** |
 
 ---
 
 ## Log
 
 ### April 2026
+
+#### 2026-04-06 — Dev Session (~26m)
+**Time:** 6:18 PM – 6:44 PM EDT
+**Type:** Development
+
+**Work Completed:**
+- Resume page (MJ-13) — full credits list, chronological order, All / Narrative / Commercial filter tabs
+- Dynamic PDF generation — `@react-pdf/renderer` client-side via mount guard, professional LETTER format with contact header and credits sections
+- Extracted credits data to `app/data/resume.ts` as single source of truth for page + PDF
+- Site-wide terminology fix — replaced all instances of "Production Designer" with "Production Design"
+- Added `.claude/` to `.gitignore` and removed accidentally committed internal files
+
+---
 
 #### 2026-04-03 — Dev Session (~5h 49m)
 **Time:** 11:05 AM – 4:54 PM EDT
