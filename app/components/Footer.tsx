@@ -3,8 +3,8 @@ import Link from 'next/link';
 const contactLinks = [
   {
     label: 'Email',
-    href: 'mailto:makaela.johnston@gmail.com',
-    external: false,
+    href: 'https://mail.google.com/mail/?view=cm&to=makaela.johnston@gmail.com',
+    external: true,
     icon: (
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
         <rect x="2" y="4" width="20" height="16" rx="2" />
