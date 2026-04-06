@@ -13,9 +13,15 @@ export function generateStaticParams() {
 export function generateMetadata({ params }: Props): Metadata {
   const project = getProject(params.category, params.slug);
   if (!project) return {};
+  const description = project.description ?? `${project.role} — ${project.client ?? ''}`.trim();
+  const images = project.image
+    ? [{ url: project.image, alt: project.title }]
+    : [{ url: '/assets/home/makaela-hero.png', alt: 'Makaela Johnston — Production Design & Set Decoration' }];
   return {
-    title: `${project.title} — Makaela Johnston`,
-    description: project.description,
+    title: project.title,
+    description,
+    openGraph: { title: project.title, description, images },
+    twitter: { card: 'summary_large_image', title: project.title, description, images: images.map(i => i.url) },
   };
 }
 

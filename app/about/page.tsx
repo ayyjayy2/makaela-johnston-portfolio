@@ -3,7 +3,7 @@ import Link from 'next/link';
 import ScrollReveal from '../components/ScrollReveal';
 
 export const metadata: Metadata = {
-  title: 'About — Makaela Johnston',
+  title: 'About',
   description: 'Chicago-based Production Design and Set Decoration with over a decade of experience in Television, Film, and Commercial work.',
 };
 
