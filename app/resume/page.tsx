@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import CreditsFilter from '../components/CreditsFilter';
 
 export const metadata: Metadata = {
   title: 'Resume — Makaela Johnston',
@@ -142,27 +143,7 @@ export default function Resume() {
           </div>
 
           {/* ── Credits list ─────────────────────────────────────── */}
-          <div className="credits-header">
-            <p className="eyebrow">All Credits</p>
-          </div>
-
-          <div style={{ paddingBottom: 'clamp(4rem, 8vw, 7rem)' }}>
-            {credits.map((credit) => (
-              <div key={credit.title} className="credit-row">
-                <div>
-                  <p className="credit-title">{credit.title}</p>
-                  <p className="credit-role">{credit.role}</p>
-                </div>
-                <div className="credit-meta">
-                  {credit.year && (
-                    <span className="credit-type">{credit.year}</span>
-                  )}
-                  <span className="credit-type">{credit.category} · {credit.type}</span>
-                  <span className="credit-studio">{credit.studio}</span>
-                </div>
-              </div>
-            ))}
-          </div>
+          <CreditsFilter credits={credits} />
         </div>
       </section>
 
