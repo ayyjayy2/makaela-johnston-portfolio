@@ -46,6 +46,9 @@ design-system/
 AGENTS.md
 CLAUDE.md
 
+# claude code
+.claude/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

@@ -4,7 +4,7 @@ import './globals.css';
 
 export const metadata: Metadata = {
   title: 'Makaela Johnston',
-  description: 'Production Designer & Set Decorator — Chicago-based with a focus in Television, Film, and Commercial work.',
+  description: 'Production Design & Set Decoration — Chicago-based with a focus in Television, Film, and Commercial work.',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
