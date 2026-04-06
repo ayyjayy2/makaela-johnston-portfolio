@@ -792,6 +792,73 @@ ul { list-style: none; }
 }
 .btn-primary-dark:hover { background-color: var(--midnight-green); }
 
+/* ── Contact ───────────────────────────────────────────────────── */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(3rem, 8vw, 8rem);
+  align-items: start;
+  padding-bottom: clamp(4rem, 8vw, 7rem);
+}
+.contact-email-link {
+  font-family: var(--font-heading);
+  font-size: clamp(1rem, 1.8vw, 1.25rem);
+  font-weight: 300;
+  color: var(--beige);
+  letter-spacing: -0.01em;
+  transition: color 200ms ease;
+}
+.contact-email-link:hover { color: var(--rosy-brown); }
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+.contact-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.contact-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.contact-label {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--moss-green);
+}
+.contact-input {
+  background: rgba(247, 244, 213, 0.04);
+  border: 1px solid rgba(247, 244, 213, 0.15);
+  color: var(--beige);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 300;
+  padding: 0.875rem 1rem;
+  width: 100%;
+  transition: border-color 200ms ease, background-color 200ms ease;
+  outline: none;
+  -webkit-appearance: none;
+}
+.contact-input::placeholder { color: rgba(247, 244, 213, 0.25); }
+.contact-input:focus {
+  border-color: rgba(247, 244, 213, 0.4);
+  background: rgba(247, 244, 213, 0.07);
+}
+.contact-textarea { resize: vertical; min-height: 140px; }
+.contact-feedback {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 300;
+}
+.contact-feedback--success { color: var(--moss-green); }
+.contact-feedback--error   { color: var(--rosy-brown); }
+
 /* ── Image placeholder ─────────────────────────────────────────── */
 .img-placeholder {
   background-color: rgba(247, 244, 213, 0.04);
@@ -835,6 +902,8 @@ ul { list-style: none; }
   }
   .quote-grid { grid-template-columns: 1fr; }
   .about-grid { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .contact-form-row { grid-template-columns: 1fr; }
   .projects-grid { grid-template-columns: repeat(2, 1fr); }
   .nav-links { display: none; }
   .nav-mobile-toggle { display: flex; }
