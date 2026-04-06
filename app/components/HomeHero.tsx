@@ -65,7 +65,7 @@ export default function HomeHero() {
             src="/assets/home/makaela-hero.png"
             alt="Makaela Johnston — Production Design & Set Decoration"
             fill
-            style={{ objectFit: 'cover', objectPosition: 'center top' }}
+            className="hero-photo-img"
             priority
           />
         </div>
