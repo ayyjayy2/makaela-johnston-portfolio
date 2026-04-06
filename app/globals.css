@@ -973,7 +973,7 @@ ul { list-style: none; }
     height: 55vw;
     min-height: 280px;
   }
-  .hero-photo-img { object-position: center center; }
+  .hero-photo-img { object-position: center 65%; }
   .hero-photo::after {
     background: linear-gradient(
       to bottom,
