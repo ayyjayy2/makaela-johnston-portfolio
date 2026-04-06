@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import ContactLinks from '../components/ContactLinks';
+import ScrollReveal from '../components/ScrollReveal';
 
 export const metadata: Metadata = {
   title: 'Contact — Makaela Johnston',
@@ -55,16 +56,20 @@ export default function Contact() {
         <div className="container">
           <div className="contact-layout">
             {/* Left — heading */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-              <p className="eyebrow">Contact</p>
-              <h1 className="section-title">
-                Let&rsquo;s work<br /><em>together</em>
-              </h1>
-              <div style={{ width: '2.5rem', height: '1px', backgroundColor: 'var(--rosy-brown)' }} />
-            </div>
+            <ScrollReveal>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                <p className="eyebrow">Contact</p>
+                <h1 className="section-title">
+                  Let&rsquo;s work<br /><em>together</em>
+                </h1>
+                <div style={{ width: '2.5rem', height: '1px', backgroundColor: 'var(--rosy-brown)' }} />
+              </div>
+            </ScrollReveal>
 
             {/* Right — links */}
-            <ContactLinks links={links} />
+            <ScrollReveal delay={150}>
+              <ContactLinks links={links} />
+            </ScrollReveal>
           </div>
         </div>
       </section>

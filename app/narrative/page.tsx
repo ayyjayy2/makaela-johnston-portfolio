@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import ProjectCard, { type Project } from '../components/ProjectCard';
+import ScrollReveal from '../components/ScrollReveal';
 
 export const metadata: Metadata = {
   title: 'Narrative — Makaela Johnston',
@@ -54,32 +55,38 @@ export default function Narrative() {
         style={{ paddingTop: 'calc(var(--nav-height) + clamp(3rem, 8vw, 6rem))' }}
       >
         <div className="container">
-          <div className="page-header">
-            <h1 className="section-title">
-              Narrative<br /><em>Projects</em>
-            </h1>
-          </div>
+          <ScrollReveal>
+            <div className="page-header">
+              <h1 className="section-title">
+                Narrative<br /><em>Projects</em>
+              </h1>
+            </div>
+          </ScrollReveal>
           <div className="projects-grid">
-            {projects.map((project) => (
-              <ProjectCard key={project.slug} {...project} />
+            {projects.map((project, i) => (
+              <ScrollReveal key={project.slug} delay={i * 80}>
+                <ProjectCard {...project} />
+              </ScrollReveal>
             ))}
           </div>
         </div>
       </section>
 
       {/* ── CTA ─────────────────────────────────────────────────── */}
-      <div className="cta-band">
-        <div className="container">
-          <div className="cta-band-inner">
-            <h2 className="cta-band-heading">
-              Let&rsquo;s build something worth watching.
-            </h2>
-            <a href="/contact" className="btn-primary-dark">
-              Get In Touch
-            </a>
+      <ScrollReveal>
+        <div className="cta-band">
+          <div className="container">
+            <div className="cta-band-inner">
+              <h2 className="cta-band-heading">
+                Let&rsquo;s build something worth watching.
+              </h2>
+              <a href="/contact" className="btn-primary-dark">
+                Get In Touch
+              </a>
+            </div>
           </div>
         </div>
-      </div>
+      </ScrollReveal>
 
     </div>
   );
