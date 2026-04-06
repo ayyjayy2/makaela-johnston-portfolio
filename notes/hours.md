@@ -2,6 +2,17 @@
 
 ---
 
+## Key
+
+| Type | Description |
+|------|-------------|
+| **Dev** | Active development session with Claude |
+| **Planning** | Solo planning, research, or design work outside of Claude |
+| **Collab** | Meetings, calls, or collaboration with client or collaborators |
+| **Review** | Design or code review sessions |
+
+---
+
 ## Total Hours
 
 | Category | Hours |
@@ -47,14 +58,3 @@
 - Project detail page — dynamic route template for all 11 projects with metadata, hero image, gallery, and prev/next navigation
 - Working hours log — created and structured `notes/hours.md`
 - Project documentation — converted and committed the project brief PDF to the repo
-
----
-
-## Key
-
-| Type | Description |
-|------|-------------|
-| **Dev** | Active development session with Claude |
-| **Planning** | Solo planning, research, or design work outside of Claude |
-| **Collab** | Meetings, calls, or collaboration with client or collaborators |
-| **Review** | Design or code review sessions |
