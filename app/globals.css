@@ -187,6 +187,10 @@ ul { list-style: none; }
 .hero-photo {
   position: relative;
 }
+.hero-photo-img {
+  object-fit: cover;
+  object-position: center top;
+}
 .hero-photo::after {
   content: '';
   position: absolute;
@@ -969,6 +973,7 @@ ul { list-style: none; }
     height: 55vw;
     min-height: 280px;
   }
+  .hero-photo-img { object-position: center 65%; }
   .hero-photo::after {
     background: linear-gradient(
       to bottom,
