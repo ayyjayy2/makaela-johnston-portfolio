@@ -793,10 +793,16 @@ ul { list-style: none; }
 .btn-primary-dark:hover { background-color: var(--midnight-green); }
 
 /* ── Contact ───────────────────────────────────────────────────── */
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(3rem, 8vw, 8rem);
+  align-items: start;
+  padding-bottom: clamp(4rem, 8vw, 7rem);
+}
 .contact-links {
   display: flex;
   flex-direction: column;
-  max-width: 640px;
 }
 .contact-link-row {
   display: flex;
@@ -969,6 +975,7 @@ ul { list-style: none; }
   }
   .quote-grid { grid-template-columns: 1fr; }
   .about-grid { grid-template-columns: 1fr; }
+  .contact-layout { grid-template-columns: 1fr; }
   .footer-inner { flex-direction: column; gap: 1.5rem; }
   .footer-links { gap: 1.25rem; }
   .projects-grid { grid-template-columns: repeat(2, 1fr); }
