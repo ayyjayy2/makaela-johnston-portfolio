@@ -18,7 +18,7 @@ export const resumeInfo = {
   union: 'IATSE',    // update / remove if not applicable
 };
 
-export const credits: Credit[] = [
+const creditData: Credit[] = [
   {
     title: 'Dark Matter',
     role: 'Art Dept Coordinator / Set Decoration Coordinator',
@@ -118,4 +118,6 @@ export const credits: Credit[] = [
     sortYear: 0,
     category: 'Commercial',
   },
-].sort((a, b) => b.sortYear - a.sortYear);
+];
+
+export const credits = creditData.sort((a, b) => b.sortYear - a.sortYear);
