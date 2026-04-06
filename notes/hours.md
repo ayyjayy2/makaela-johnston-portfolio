@@ -27,17 +27,9 @@
 
 ### April 2026
 
-#### 2026-04-06 — Dev Session 2 (in progress)
-**Time:** 6:53 PM – TBD EDT
-**Type:** Development
-
-**Work Completed:**
-- TBD
-
----
-
-#### 2026-04-06 — Dev Session 1 (~26m)
-**Time:** 6:18 PM – 6:44 PM EDT
+#### 2026-04-06 — Dev Sessions (in progress)
+**Time 1:** 6:18 PM – 6:44 PM EDT (~26m)
+**Time 2:** 6:53 PM – TBD EDT
 **Type:** Development
 
 **Work Completed:**
