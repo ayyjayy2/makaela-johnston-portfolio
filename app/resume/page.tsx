@@ -120,7 +120,6 @@ export default function Resume() {
       >
         <div className="container">
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', paddingBottom: 'clamp(3rem, 6vw, 5rem)' }}>
-            <p className="eyebrow">Resume</p>
             <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', gap: '2rem', flexWrap: 'wrap' }}>
               <h1 className="section-title">
                 <em>Resume</em>
