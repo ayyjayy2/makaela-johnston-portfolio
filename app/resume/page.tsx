@@ -6,13 +6,15 @@ export const metadata: Metadata = {
   description: 'Full production credits for Makaela Johnston — Production Designer & Set Decorator with credits on Apple TV+, Netflix, NBC, FX/Hulu, and more.',
 };
 
-const narrativeCredits = [
+const credits = [
   {
     title: 'Dark Matter',
     role: 'Art Dept Coordinator / Set Decoration Coordinator',
     studio: 'Apple TV+',
     type: 'Series · S1–S2',
     year: '2024–2025',
+    sortYear: 2025,
+    category: 'Narrative',
   },
   {
     title: 'Saturn Return',
@@ -20,37 +22,8 @@ const narrativeCredits = [
     studio: 'Netflix',
     type: 'Feature Film',
     year: '2025',
-  },
-  {
-    title: 'Chicago Fire',
-    role: 'Set Decorator',
-    studio: 'NBC',
-    type: 'Series · Season 12',
-    year: '2024',
-  },
-  {
-    title: 'Justified: City Primeval',
-    role: 'Set Decorator',
-    studio: 'FX / Hulu',
-    type: 'Limited Series',
-    year: '2022',
-  },
-  {
-    title: 'Light Years',
-    role: 'Art Dept Coordinator',
-    studio: 'Amazon Prime',
-    type: 'Series · S1',
-    year: '2021',
-  },
-];
-
-const commercialCredits = [
-  {
-    title: 'Spotify × Jack Harlow',
-    role: 'Production Designer',
-    studio: 'Spotify',
-    type: 'TikTok Ad',
-    year: '2021',
+    sortYear: 2025,
+    category: 'Narrative',
   },
   {
     title: 'Chicago Blackhawks — Night at the United Center',
@@ -58,6 +31,17 @@ const commercialCredits = [
     studio: 'Chicago Blackhawks',
     type: 'Social Media Commercial',
     year: '2025',
+    sortYear: 2025,
+    category: 'Commercial',
+  },
+  {
+    title: 'Chicago Fire',
+    role: 'Set Decorator',
+    studio: 'NBC',
+    type: 'Series · Season 12',
+    year: '2024',
+    sortYear: 2024,
+    category: 'Narrative',
   },
   {
     title: 'Chicago Bulls 1966 × Just Don',
@@ -65,6 +49,35 @@ const commercialCredits = [
     studio: 'Chicago Bulls',
     type: 'Multimedia Ad',
     year: '2023',
+    sortYear: 2023,
+    category: 'Commercial',
+  },
+  {
+    title: 'Justified: City Primeval',
+    role: 'Set Decorator',
+    studio: 'FX / Hulu',
+    type: 'Limited Series',
+    year: '2022',
+    sortYear: 2022,
+    category: 'Narrative',
+  },
+  {
+    title: 'Light Years',
+    role: 'Art Dept Coordinator',
+    studio: 'Amazon Prime',
+    type: 'Series · S1',
+    year: '2021',
+    sortYear: 2021,
+    category: 'Narrative',
+  },
+  {
+    title: 'Spotify × Jack Harlow',
+    role: 'Production Designer',
+    studio: 'Spotify',
+    type: 'TikTok Ad',
+    year: '2021',
+    sortYear: 2021,
+    category: 'Commercial',
   },
   {
     title: 'A Kernel of Truth: A Benny the Bull Film',
@@ -72,6 +85,8 @@ const commercialCredits = [
     studio: 'Chicago Bulls',
     type: 'Short Film',
     year: '',
+    sortYear: 0,
+    category: 'Commercial',
   },
   {
     title: 'The Crab Place — Crab Cake Eggs Benny',
@@ -79,6 +94,8 @@ const commercialCredits = [
     studio: 'The Crab Place',
     type: 'Commercial',
     year: '',
+    sortYear: 0,
+    category: 'Commercial',
   },
   {
     title: 'Toyota — Naughty List',
@@ -86,8 +103,10 @@ const commercialCredits = [
     studio: 'Toyota',
     type: 'Commercial',
     year: '',
+    sortYear: 0,
+    category: 'Commercial',
   },
-];
+].sort((a, b) => b.sortYear - a.sortYear);
 
 export default function Resume() {
   return (
@@ -121,23 +140,14 @@ export default function Resume() {
             </div>
             <div style={{ width: '2.5rem', height: '1px', backgroundColor: 'var(--rosy-brown)' }} />
           </div>
-        </div>
-      </section>
 
-      {/* ── Narrative Credits ───────────────────────────────────── */}
-      <section className="section-dark" style={{ paddingTop: 0 }}>
-        <div className="container">
+          {/* ── Credits list ─────────────────────────────────────── */}
           <div className="credits-header">
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-              <p className="eyebrow">Television &amp; Film</p>
-              <h2 className="section-title" style={{ fontSize: 'clamp(2rem, 4vw, 3rem)' }}>
-                Narrative Work
-              </h2>
-            </div>
+            <p className="eyebrow">All Credits</p>
           </div>
 
-          <div>
-            {narrativeCredits.map((credit) => (
+          <div style={{ paddingBottom: 'clamp(4rem, 8vw, 7rem)' }}>
+            {credits.map((credit) => (
               <div key={credit.title} className="credit-row">
                 <div>
                   <p className="credit-title">{credit.title}</p>
@@ -147,39 +157,7 @@ export default function Resume() {
                   {credit.year && (
                     <span className="credit-type">{credit.year}</span>
                   )}
-                  <span className="credit-type">{credit.type}</span>
-                  <span className="credit-studio">{credit.studio}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── Commercial Credits ──────────────────────────────────── */}
-      <section className="section-mid">
-        <div className="container">
-          <div className="credits-header">
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-              <p className="eyebrow">Brand &amp; Advertisement</p>
-              <h2 className="section-title" style={{ fontSize: 'clamp(2rem, 4vw, 3rem)' }}>
-                Commercial Work
-              </h2>
-            </div>
-          </div>
-
-          <div>
-            {commercialCredits.map((credit) => (
-              <div key={credit.title} className="credit-row">
-                <div>
-                  <p className="credit-title">{credit.title}</p>
-                  <p className="credit-role">{credit.role}</p>
-                </div>
-                <div className="credit-meta">
-                  {credit.year && (
-                    <span className="credit-type">{credit.year}</span>
-                  )}
-                  <span className="credit-type">{credit.type}</span>
+                  <span className="credit-type">{credit.category} · {credit.type}</span>
                   <span className="credit-studio">{credit.studio}</span>
                 </div>
               </div>
