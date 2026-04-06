@@ -10,7 +10,7 @@ export type Credit = {
 
 export const resumeInfo = {
   name: 'Makaela Johnston',
-  title: 'Production Designer & Set Decorator',
+  title: 'Production Design & Set Decoration',
   email: 'makaela.johnston@gmail.com',
   phone: '',          // add when available
   location: 'Chicago, IL',
@@ -39,7 +39,7 @@ export const credits: Credit[] = [
   },
   {
     title: 'Chicago Blackhawks — Night at the United Center',
-    role: 'Production Designer',
+    role: 'Production Design',
     studio: 'Chicago Blackhawks',
     type: 'Social Media Commercial',
     year: '2025',
@@ -57,7 +57,7 @@ export const credits: Credit[] = [
   },
   {
     title: 'Chicago Bulls 1966 × Just Don',
-    role: 'Production Designer',
+    role: 'Production Design',
     studio: 'Chicago Bulls',
     type: 'Multimedia Ad',
     year: '2023',
@@ -84,7 +84,7 @@ export const credits: Credit[] = [
   },
   {
     title: 'Spotify × Jack Harlow',
-    role: 'Production Designer',
+    role: 'Production Design',
     studio: 'Spotify',
     type: 'TikTok Ad',
     year: '2021',
@@ -93,7 +93,7 @@ export const credits: Credit[] = [
   },
   {
     title: 'A Kernel of Truth: A Benny the Bull Film',
-    role: 'Production Designer',
+    role: 'Production Design',
     studio: 'Chicago Bulls',
     type: 'Short Film',
     year: '',
@@ -102,7 +102,7 @@ export const credits: Credit[] = [
   },
   {
     title: 'The Crab Place — Crab Cake Eggs Benny',
-    role: 'Production Designer',
+    role: 'Production Design',
     studio: 'The Crab Place',
     type: 'Commercial',
     year: '',
@@ -111,7 +111,7 @@ export const credits: Credit[] = [
   },
   {
     title: 'Toyota — Naughty List',
-    role: 'Production Designer',
+    role: 'Production Design',
     studio: 'Toyota',
     type: 'Commercial',
     year: '',

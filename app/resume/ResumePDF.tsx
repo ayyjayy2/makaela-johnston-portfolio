@@ -172,7 +172,7 @@ export default function ResumePDF() {
     <Document
       title={`${resumeInfo.name} — Resume`}
       author={resumeInfo.name}
-      subject="Production Designer & Set Decorator Resume"
+      subject="Production Design & Set Decoration Resume"
       keywords="production designer, set decorator, film, television, commercial"
     >
       <Page size="LETTER" style={s.page}>

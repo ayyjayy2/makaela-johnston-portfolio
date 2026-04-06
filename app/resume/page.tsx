@@ -6,7 +6,7 @@ import { credits } from '../data/resume';
 
 export const metadata: Metadata = {
   title: 'Resume — Makaela Johnston',
-  description: 'Full production credits for Makaela Johnston — Production Designer & Set Decorator with credits on Apple TV+, Netflix, NBC, FX/Hulu, and more.',
+  description: 'Full production credits for Makaela Johnston — Production Design & Set Decoration with credits on Apple TV+, Netflix, NBC, FX/Hulu, and more.',
 };
 
 export default function Resume() {

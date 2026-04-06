@@ -3,11 +3,11 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'About — Makaela Johnston',
-  description: 'Chicago-based Production Designer and Set Decorator with over a decade of experience in Television, Film, and Commercial work.',
+  description: 'Chicago-based Production Design and Set Decoration with over a decade of experience in Television, Film, and Commercial work.',
 };
 
 const disciplines = [
-  'Production Designer',
+  'Production Design',
   'Art Director',
   'Set Decoration Buyer',
   'Set Decoration Coordinator',
@@ -20,7 +20,7 @@ const credits = [
   { title: 'Chicago Fire',             role: 'Set Decorator',              studio: 'NBC',          type: 'Series · S12'   },
   { title: 'Justified: City Primeval', role: 'Set Decorator',              studio: 'FX / Hulu',    type: 'Limited Series' },
   { title: 'Light Years',              role: 'Art Dept Coordinator',       studio: 'Amazon Prime', type: 'Series · S1'    },
-  { title: 'Spotify × Jack Harlow',    role: 'Production Designer',        studio: 'Spotify',      type: 'Commercial'     },
+  { title: 'Spotify × Jack Harlow',    role: 'Production Design',          studio: 'Spotify',      type: 'Commercial'     },
 ];
 
 export default function About() {
@@ -43,8 +43,8 @@ export default function About() {
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', paddingTop: '0.5rem' }}>
               <p className="lead-text">
-                Makaela Johnston is a Chicago-based Production Designer and Set Decorator
-                with a focus in Television, Film, and Commercial work. With over a decade
+                Makaela Johnston is a Chicago-based Production Design and Set Decoration
+                professional with a focus in Television, Film, and Commercial work. With over a decade
                 in professional on-set experience, she has stepped into multiple art
                 department positions across major networks and streaming platforms.
               </p>
