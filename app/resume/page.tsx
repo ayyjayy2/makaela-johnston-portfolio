@@ -123,7 +123,7 @@ export default function Resume() {
             <p className="eyebrow">Resume</p>
             <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', gap: '2rem', flexWrap: 'wrap' }}>
               <h1 className="section-title">
-                Production<br /><em>Credits</em>
+                <em>Resume</em>
               </h1>
               <a
                 href="/assets/resume.pdf"
