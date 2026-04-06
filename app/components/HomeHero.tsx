@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import ScrollReveal from './ScrollReveal';
 
 const marqueeItems = [
   { label: 'Netflix',       highlight: false },
@@ -32,19 +33,21 @@ export default function HomeHero() {
 
         {/* Left — content */}
         <div className="hero-content">
-          <p className="hero-eyebrow">Chicago · Film · Television · Commercial</p>
+          <p className="hero-eyebrow hero-anim hero-anim-d1">
+            Chicago · Film · Television · Commercial
+          </p>
 
-          <h1 className="hero-name">
+          <h1 className="hero-name hero-anim hero-anim-d2">
             Makaela<br />
             <em>Johnston</em>
           </h1>
 
-          <div className="hero-role">
+          <div className="hero-role hero-anim hero-anim-d3">
             <div className="hero-role-line" />
             <p className="hero-role-text">Production Design &amp; Set Decoration</p>
           </div>
 
-          <div className="hero-ctas">
+          <div className="hero-ctas hero-anim hero-anim-d4">
             <Link href="/commercial" className="btn-primary">
               Commercial
             </Link>
@@ -53,14 +56,14 @@ export default function HomeHero() {
             </Link>
           </div>
 
-          <div className="hero-scroll" aria-hidden="true">
+          <div className="hero-scroll hero-anim hero-anim-d5" aria-hidden="true">
             <div className="hero-scroll-line" />
             <span className="hero-scroll-label">Scroll</span>
           </div>
         </div>
 
         {/* Right — photo */}
-        <div className="hero-photo">
+        <div className="hero-photo hero-anim-fade hero-anim-d6">
           <Image
             src="/assets/home/makaela-hero.png"
             alt="Makaela Johnston — Production Design & Set Decoration"
@@ -89,18 +92,22 @@ export default function HomeHero() {
       <section className="quote-section" aria-label="Introduction">
         <div className="container">
           <div className="quote-grid">
-            <blockquote className="quote-text">
-              &ldquo;Bringing unique stories and characters to life through design.&rdquo;
-            </blockquote>
-            <div className="quote-meta">
-              <div className="quote-rule" />
-              <p className="quote-sub">
-                Over a decade crafting environments for film, television, and commercial productions.
-              </p>
-              <Link href="/about" className="btn-ghost" style={{ marginTop: '0.5rem' }}>
-                About Makaela <span aria-hidden="true">→</span>
-              </Link>
-            </div>
+            <ScrollReveal>
+              <blockquote className="quote-text">
+                &ldquo;Bringing unique stories and characters to life through design.&rdquo;
+              </blockquote>
+            </ScrollReveal>
+            <ScrollReveal delay={150}>
+              <div className="quote-meta">
+                <div className="quote-rule" />
+                <p className="quote-sub">
+                  Over a decade crafting environments for film, television, and commercial productions.
+                </p>
+                <Link href="/about" className="btn-ghost" style={{ marginTop: '0.5rem' }}>
+                  About Makaela <span aria-hidden="true">→</span>
+                </Link>
+              </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
