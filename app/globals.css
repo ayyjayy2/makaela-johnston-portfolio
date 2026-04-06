@@ -228,7 +228,7 @@ ul { list-style: none; }
 }
 .hero-photo-img {
   object-fit: cover;
-  object-position: center top;
+  object-position: center bottom;
 }
 .hero-photo::after {
   content: '';
