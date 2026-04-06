@@ -1,16 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-
-type Credit = {
-  title: string;
-  role: string;
-  studio: string;
-  type: string;
-  year: string;
-  sortYear: number;
-  category: 'Commercial' | 'Narrative';
-};
+import type { Credit } from '../data/resume';
 
 type Filter = 'All' | 'Commercial' | 'Narrative';
 
