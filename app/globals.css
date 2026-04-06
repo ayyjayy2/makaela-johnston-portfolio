@@ -793,10 +793,19 @@ ul { list-style: none; }
 .btn-primary-dark:hover { background-color: var(--midnight-green); }
 
 /* ── Contact ───────────────────────────────────────────────────── */
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(3rem, 6vw, 5rem);
+  align-items: start;
+  padding-bottom: clamp(4rem, 8vw, 7rem);
+}
+@media (min-width: 1024px) {
+  .contact-layout { grid-template-columns: 1fr 1fr; gap: clamp(3rem, 8vw, 8rem); }
+}
 .contact-links {
   display: flex;
   flex-direction: column;
-  max-width: 640px;
 }
 .contact-link-row {
   display: flex;

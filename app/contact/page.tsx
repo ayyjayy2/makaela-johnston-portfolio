@@ -53,15 +53,19 @@ export default function Contact() {
         style={{ paddingTop: 'calc(var(--nav-height) + clamp(3rem, 8vw, 6rem))', paddingBottom: 'clamp(5rem, 12vw, 10rem)' }}
       >
         <div className="container">
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginBottom: 'clamp(3rem, 6vw, 5rem)' }}>
-            <p className="eyebrow">Contact</p>
-            <h1 className="section-title">
-              Let&rsquo;s work<br /><em>together</em>
-            </h1>
-            <div style={{ width: '2.5rem', height: '1px', backgroundColor: 'var(--rosy-brown)' }} />
-          </div>
+          <div className="contact-layout">
+            {/* Left — heading */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+              <p className="eyebrow">Contact</p>
+              <h1 className="section-title">
+                Let&rsquo;s work<br /><em>together</em>
+              </h1>
+              <div style={{ width: '2.5rem', height: '1px', backgroundColor: 'var(--rosy-brown)' }} />
+            </div>
 
-          <ContactLinks links={links} />
+            {/* Right — links */}
+            <ContactLinks links={links} />
+          </div>
         </div>
       </section>
     </div>
