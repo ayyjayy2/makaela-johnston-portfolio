@@ -58,7 +58,7 @@ export default function Commercial() {
 
       {/* ── Header + Grid ───────────────────────────────────────── */}
       <section
-        className="section-dark"
+        className="section-projects"
         style={{ paddingTop: 'calc(var(--nav-height) + clamp(3rem, 8vw, 6rem))' }}
       >
         <div className="container">
