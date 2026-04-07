@@ -19,9 +19,6 @@ export default function Footer() {
           </div>
 
           <div className="footer-right">
-            <p className="footer-headline">
-              Let&rsquo;s build something<br />worth watching.
-            </p>
             <nav aria-label="Contact links" className="footer-contact">
               <a
                 href="https://mail.google.com/mail/?view=cm&to=makaela.johnston@gmail.com"
@@ -62,11 +59,6 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="footer-bottom">
-          <p className="footer-copy">
-            &copy; {new Date().getFullYear()} Makaela Johnston. All rights reserved.
-          </p>
-        </div>
 
       </div>
     </footer>

@@ -249,6 +249,13 @@ ul { list-style: none; }
   text-transform: uppercase;
   color: var(--moss-green);
 }
+.hero-name-block {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  width: fit-content;
+  gap: 1rem;
+}
 .hero-name {
   font-family: var(--font-heading);
   font-size: clamp(4.5rem, 10vw, 9rem);
@@ -265,13 +272,13 @@ ul { list-style: none; }
 .hero-role {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 1rem;
 }
 .hero-role-line {
-  width: 2rem;
+  flex: 1;
   height: 1px;
   background-color: var(--rosy-brown);
-  flex-shrink: 0;
 }
 .hero-role-text {
   font-family: var(--font-body);
@@ -279,6 +286,15 @@ ul { list-style: none; }
   font-weight: 300;
   letter-spacing: 0.08em;
   color: rgba(247, 244, 213, 0.7);
+  white-space: nowrap;
+}
+.hero-tagline {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  color: rgba(247, 244, 213, 0.5);
+  margin-top: 0.75rem;
 }
 .hero-ctas {
   display: flex;
@@ -956,8 +972,6 @@ ul { list-style: none; }
   justify-content: space-between;
   gap: 3rem;
   padding: clamp(2rem, 4vw, 3rem) 0;
-  border-bottom: 1px solid rgba(131, 153, 88, 0.1);
-  margin-bottom: 1.5rem;
 }
 .footer-brand {
   display: flex;
