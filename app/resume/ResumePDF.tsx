@@ -6,7 +6,7 @@ import {
   StyleSheet,
   Font,
 } from '@react-pdf/renderer';
-import { credits, resumeInfo, type Credit } from '../data/resume';
+import { credits, resumeInfo } from '../data/resume';
 
 Font.register({
   family: 'Helvetica Neue',
@@ -20,64 +20,46 @@ const C = {
   muted:      '#888888',
   rule:       '#CCCCCC',
   bg:         '#FFFFFF',
-  accent:     '#2B4C3F',  // dark green — subtle, professional
+  accent:     '#2B4C3F',
 };
 
 const s = StyleSheet.create({
   page: {
     backgroundColor: C.bg,
-    paddingTop: 52,
-    paddingBottom: 52,
-    paddingHorizontal: 52,
+    paddingTop: 40,
+    paddingBottom: 36,
+    paddingHorizontal: 44,
     fontFamily: 'Helvetica',
     color: C.dark,
   },
 
   // ── Header ────────────────────────────────────────────────────────
   header: {
-    marginBottom: 28,
+    marginBottom: 16,
     borderBottomWidth: 2,
     borderBottomColor: C.accent,
-    paddingBottom: 16,
+    paddingBottom: 10,
   },
   name: {
-    fontSize: 26,
+    fontSize: 22,
     fontFamily: 'Helvetica-Bold',
     color: C.black,
     letterSpacing: 0.5,
-    marginBottom: 4,
+    marginBottom: 3,
+    textAlign: 'left',
   },
   titleLine: {
-    fontSize: 11,
+    fontSize: 9,
     color: C.mid,
     letterSpacing: 0.8,
     textTransform: 'uppercase',
-    marginBottom: 10,
+    marginBottom: 7,
+    textAlign: 'left',
   },
-  contactRow: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    gap: 16,
-  },
-  contactItem: {
-    fontSize: 9,
-    color: C.muted,
-  },
-
-  // ── Section ───────────────────────────────────────────────────────
-  section: {
-    marginBottom: 22,
-  },
-  sectionHeading: {
+  contactLine: {
     fontSize: 8,
-    fontFamily: 'Helvetica-Bold',
-    color: C.accent,
-    letterSpacing: 1.4,
-    textTransform: 'uppercase',
-    marginBottom: 8,
-    borderBottomWidth: 0.5,
-    borderBottomColor: C.rule,
-    paddingBottom: 4,
+    color: C.muted,
+    textAlign: 'left',
   },
 
   // ── Credit row ────────────────────────────────────────────────────
@@ -85,7 +67,7 @@ const s = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'flex-start',
-    paddingVertical: 6,
+    paddingVertical: 3.5,
     borderBottomWidth: 0.5,
     borderBottomColor: '#EEEEEE',
   },
@@ -94,27 +76,27 @@ const s = StyleSheet.create({
     paddingRight: 12,
   },
   creditTitle: {
-    fontSize: 10,
+    fontSize: 9,
     fontFamily: 'Helvetica-Bold',
     color: C.black,
-    marginBottom: 2,
+    marginBottom: 1,
   },
   creditRole: {
-    fontSize: 9,
+    fontSize: 8,
     color: C.mid,
   },
   creditRight: {
     alignItems: 'flex-end',
-    minWidth: 120,
+    minWidth: 110,
   },
   creditYear: {
-    fontSize: 9,
+    fontSize: 8,
     fontFamily: 'Helvetica-Bold',
     color: C.dark,
     marginBottom: 1,
   },
   creditMeta: {
-    fontSize: 8,
+    fontSize: 7,
     color: C.muted,
     textAlign: 'right',
   },
@@ -122,9 +104,9 @@ const s = StyleSheet.create({
   // ── Footer ────────────────────────────────────────────────────────
   footer: {
     position: 'absolute',
-    bottom: 28,
-    left: 52,
-    right: 52,
+    bottom: 22,
+    left: 44,
+    right: 44,
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
@@ -134,38 +116,13 @@ const s = StyleSheet.create({
   },
 });
 
-function CreditSection({ heading, items }: { heading: string; items: Credit[] }) {
-  if (items.length === 0) return null;
-  return (
-    <View style={s.section}>
-      <Text style={s.sectionHeading}>{heading}</Text>
-      {items.map((c) => (
-        <View key={c.title} style={s.creditRow}>
-          <View style={s.creditLeft}>
-            <Text style={s.creditTitle}>{c.title}</Text>
-            <Text style={s.creditRole}>{c.role}</Text>
-          </View>
-          <View style={s.creditRight}>
-            {c.year ? <Text style={s.creditYear}>{c.year}</Text> : null}
-            <Text style={s.creditMeta}>{c.type}</Text>
-            <Text style={s.creditMeta}>{c.studio}</Text>
-          </View>
-        </View>
-      ))}
-    </View>
-  );
-}
-
 export default function ResumePDF() {
-  const narrative  = credits.filter((c) => c.category === 'Narrative');
-  const commercial = credits.filter((c) => c.category === 'Commercial');
-
   const contactParts = [
-    resumeInfo.email    && `✉  ${resumeInfo.email}`,
-    resumeInfo.phone    && `☎  ${resumeInfo.phone}`,
-    resumeInfo.location && `⌖  ${resumeInfo.location}`,
-    resumeInfo.website  && `⬡  ${resumeInfo.website}`,
-    resumeInfo.union    && resumeInfo.union,
+    resumeInfo.email,
+    resumeInfo.phone,
+    resumeInfo.location,
+    resumeInfo.website,
+    resumeInfo.union,
   ].filter(Boolean) as string[];
 
   return (
@@ -181,18 +138,23 @@ export default function ResumePDF() {
         <View style={s.header}>
           <Text style={s.name}>{resumeInfo.name}</Text>
           <Text style={s.titleLine}>{resumeInfo.title}</Text>
-          <View style={s.contactRow}>
-            {contactParts.map((part) => (
-              <Text key={part} style={s.contactItem}>{part}</Text>
-            ))}
-          </View>
+          <Text style={s.contactLine}>{contactParts.join(' | ')}</Text>
         </View>
 
-        {/* Narrative credits */}
-        <CreditSection heading="Television & Film" items={narrative} />
-
-        {/* Commercial credits */}
-        <CreditSection heading="Commercial & Brand" items={commercial} />
+        {/* All credits — chronological, most recent first */}
+        {credits.map((c) => (
+          <View key={c.title + c.year} style={s.creditRow}>
+            <View style={s.creditLeft}>
+              <Text style={s.creditTitle}>{c.title}</Text>
+              <Text style={s.creditRole}>{c.role}</Text>
+            </View>
+            <View style={s.creditRight}>
+              {c.year ? <Text style={s.creditYear}>{c.year}</Text> : null}
+              <Text style={s.creditMeta}>{c.type}</Text>
+              <Text style={s.creditMeta}>{c.studio}</Text>
+            </View>
+          </View>
+        ))}
 
         {/* Footer */}
         <View style={s.footer} fixed>
