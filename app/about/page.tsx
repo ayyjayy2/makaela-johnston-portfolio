@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import ScrollReveal from '../components/ScrollReveal';
+import { credits as allCredits } from '../data/resume';
 
 export const metadata: Metadata = {
   title: 'About',
@@ -15,14 +16,7 @@ const disciplines = [
   'Art Department Coordinator',
 ];
 
-const credits = [
-  { title: 'Saturn Return',            role: 'Set Decoration Buyer',       studio: 'Netflix',      type: 'Feature Film'   },
-  { title: 'Dark Matter',              role: 'Set Decoration Coordinator', studio: 'Apple TV+',    type: 'Series · S1–S2' },
-  { title: 'Chicago Fire',             role: 'Set Decorator',              studio: 'NBC',          type: 'Series · S12'   },
-  { title: 'Justified: City Primeval', role: 'Set Decorator',              studio: 'FX / Hulu',    type: 'Limited Series' },
-  { title: 'Light Years',              role: 'Art Dept Coordinator',       studio: 'Amazon Prime', type: 'Series · S1'    },
-  { title: 'Spotify × Jack Harlow',    role: 'Production Design',          studio: 'Spotify',      type: 'Commercial'     },
-];
+const credits = allCredits.slice(0, 5);
 
 export default function About() {
   return (
@@ -118,6 +112,7 @@ export default function About() {
                   <div className="credit-meta">
                     <span className="credit-type">{credit.type}</span>
                     <span className="credit-studio">{credit.studio}</span>
+                    {credit.year ? <span className="credit-studio">{credit.year}</span> : null}
                   </div>
                 </div>
               </ScrollReveal>
