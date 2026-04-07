@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import CreditsFilter from '../components/CreditsFilter';
 import DownloadResumeButton from '../components/DownloadResumeButton';
 import ScrollReveal from '../components/ScrollReveal';
@@ -39,21 +38,6 @@ export default function Resume() {
         </div>
       </section>
 
-      {/* ── CTA ────────────────────────────────────────────────── */}
-      <ScrollReveal>
-        <div className="cta-band">
-          <div className="container">
-            <div className="cta-band-inner">
-              <h2 className="cta-band-heading">
-                Let&rsquo;s build something worth watching.
-              </h2>
-              <Link href="/contact" className="btn-primary-dark">
-                Get In Touch
-              </Link>
-            </div>
-          </div>
-        </div>
-      </ScrollReveal>
 
     </div>
   );

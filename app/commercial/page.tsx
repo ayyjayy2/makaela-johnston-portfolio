@@ -80,20 +80,6 @@ export default function Commercial() {
       </section>
 
       {/* ── CTA ─────────────────────────────────────────────────── */}
-      <ScrollReveal>
-        <div className="cta-band">
-          <div className="container">
-            <div className="cta-band-inner">
-              <h2 className="cta-band-heading">
-                Let&rsquo;s build something worth watching.
-              </h2>
-              <a href="/contact" className="btn-primary-dark">
-                Get In Touch
-              </a>
-            </div>
-          </div>
-        </div>
-      </ScrollReveal>
 
     </div>
   );
