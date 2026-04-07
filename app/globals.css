@@ -685,7 +685,7 @@ ul { list-style: none; }
 }
 .section-mid {
   background-color: var(--midnight-green);
-  padding: clamp(4rem, 10vw, 8rem) 0;
+  padding: clamp(2rem, 5vw, 4rem) 0;
 }
 .eyebrow {
   font-family: var(--font-body);
@@ -739,7 +739,7 @@ ul { list-style: none; }
 }
 .stat-number {
   font-family: var(--font-heading);
-  font-size: clamp(5rem, 14vw, 10rem);
+  font-size: clamp(2.5rem, 7vw, 5rem);
   font-weight: 100;
   line-height: 0.85;
   letter-spacing: -0.04em;
