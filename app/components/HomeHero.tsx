@@ -14,7 +14,7 @@ export default function HomeHero() {
         <div className="hero-content">
           <div className="hero-name-block hero-anim hero-anim-d2">
             <h1 className="hero-name">
-              Makaela<br />
+              Makaela
               <em>Johnston</em>
             </h1>
 
@@ -23,11 +23,12 @@ export default function HomeHero() {
               <p className="hero-role-text">Production Design &amp; Set Decoration</p>
               <div className="hero-role-line" />
             </div>
-          </div>
 
-          <p className="hero-tagline hero-anim hero-anim-d4">
-            Bringing unique stories and characters to life through design.
-          </p>
+            <p className="hero-tagline hero-anim hero-anim-d4">
+              Bringing unique stories and characters<br />
+              to life through design.
+            </p>
+          </div>
 
         </div>
 
