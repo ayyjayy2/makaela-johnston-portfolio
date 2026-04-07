@@ -33,7 +33,7 @@ export default function About() {
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                 <p className="eyebrow">About</p>
                 <h1 className="section-title">
-                  The story<br />behind<br /><em>the work</em>
+                  <em>My story</em>
                 </h1>
                 <div style={{ width: '2.5rem', height: '1px', backgroundColor: 'var(--rosy-brown)' }} />
               </div>
@@ -73,11 +73,7 @@ export default function About() {
             <ScrollReveal delay={150}>
               <div>
                 <p className="eyebrow" style={{ marginBottom: '1.5rem' }}>Disciplines</p>
-                <ul className="disciplines-list">
-                  {disciplines.map((d) => (
-                    <li key={d} className="discipline-item">{d}</li>
-                  ))}
-                </ul>
+                <p className="disciplines-text">{disciplines.join(' · ')}</p>
               </div>
             </ScrollReveal>
           </div>

@@ -703,20 +703,14 @@ ul { list-style: none; }
   max-width: 58ch;
 }
 .lead-text.on-light { color: rgba(10, 51, 35, 0.8); }
-.disciplines-list { display: flex; flex-direction: column; }
-.discipline-item {
-  font-family: var(--font-heading);
-  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
-  font-weight: 200;
-  color: rgba(247, 244, 213, 0.4);
-  padding: 0.85rem 0;
-  border-bottom: 1px solid rgba(247, 244, 213, 0.08);
-  letter-spacing: -0.01em;
-  transition: color 200ms ease;
+.disciplines-text {
+  font-family: var(--font-body);
+  font-size: clamp(0.85rem, 1.2vw, 1rem);
+  font-weight: 400;
+  color: rgba(247, 244, 213, 0.65);
+  letter-spacing: 0.02em;
+  line-height: 1.8;
 }
-.discipline-item:first-child { color: var(--beige); font-weight: 300; }
-.discipline-item:nth-child(even) { font-style: italic; }
-.discipline-item:hover { color: rgba(247, 244, 213, 0.75); }
 .stat-block {
   display: flex;
   flex-direction: column;
