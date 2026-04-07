@@ -265,6 +265,7 @@ ul { list-style: none; }
   color: var(--beige);
 }
 .hero-name em {
+  display: block;
   font-style: italic;
   font-weight: 200;
   color: var(--rosy-brown);
@@ -290,11 +291,15 @@ ul { list-style: none; }
 }
 .hero-tagline {
   font-family: var(--font-body);
-  font-size: 0.75rem;
+  font-size: clamp(0.85rem, 1.5vw, 1rem);
+  font-style: italic;
   font-weight: 300;
-  letter-spacing: 0.04em;
-  color: rgba(247, 244, 213, 0.5);
-  margin-top: 0.75rem;
+  line-height: 1.7;
+  letter-spacing: 0.02em;
+  color: rgba(247, 244, 213, 0.65);
+  border-left: 1px solid var(--rosy-brown);
+  padding-left: 1rem;
+  margin-top: 1.25rem;
 }
 .hero-ctas {
   display: flex;
@@ -1057,6 +1062,8 @@ ul { list-style: none; }
     padding-top: calc(var(--nav-height) + 3rem);
     padding-bottom: 4rem;
   }
+  .hero-role { gap: 0; }
+  .hero-role-line { display: none; }
   .hero-photo {
     order: 1;
     height: 55vw;
