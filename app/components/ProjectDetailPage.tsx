@@ -35,6 +35,13 @@ export default function ProjectDetailPage({ category, slug }: Props) {
             </Link>
             <p className="eyebrow">{project.client}</p>
             <h1 className="section-title">{project.title}</h1>
+            {meta.length > 0 && (
+              <p className="project-detail-meta-line">
+                {meta.map(({ value }, i) => (
+                  <span key={i}>{i > 0 && <span className="project-detail-meta-sep"> · </span>}{value}</span>
+                ))}
+              </p>
+            )}
             {project.watchUrl && (
               <a
                 href={project.watchUrl}
@@ -63,24 +70,14 @@ export default function ProjectDetailPage({ category, slug }: Props) {
         </div>
       </section>
 
-      {/* ── Meta + Description ──────────────────────────────────── */}
-      <section className="section-dark" style={{ paddingTop: '0', paddingBottom: 'clamp(3rem, 6vw, 5rem)' }}>
-        <div className="container">
-          <div className="project-detail-body">
-            <div className="project-detail-meta">
-              {meta.map(({ label, value }) => (
-                <div key={label} className="project-detail-meta-item">
-                  <p className="project-detail-meta-label">{label}</p>
-                  <p className="project-detail-meta-value">{value}</p>
-                </div>
-              ))}
-            </div>
-            {project.description && (
-              <p className="project-detail-description">{project.description}</p>
-            )}
+      {/* ── Description ─────────────────────────────────────────── */}
+      {project.description && (
+        <section className="section-dark" style={{ paddingTop: '0', paddingBottom: 'clamp(3rem, 6vw, 5rem)' }}>
+          <div className="container">
+            <p className="project-detail-description">{project.description}</p>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* ── Gallery ─────────────────────────────────────────────── */}
       {project.images && project.images.length > 0 && (
