@@ -11,15 +11,6 @@ const marqueeItems = [
   { label: 'Spotify',       highlight: false },
   { label: 'Chicago Bulls', highlight: true  },
   { label: 'Toyota',        highlight: false },
-  // duplicate for seamless loop
-  { label: 'Netflix',       highlight: false },
-  { label: 'Apple TV+',     highlight: true  },
-  { label: 'NBC',           highlight: false },
-  { label: 'FX · Hulu',    highlight: false },
-  { label: 'Amazon Prime',  highlight: true  },
-  { label: 'Spotify',       highlight: false },
-  { label: 'Chicago Bulls', highlight: true  },
-  { label: 'Toyota',        highlight: false },
 ];
 
 export default function HomeHero() {
@@ -34,7 +25,7 @@ export default function HomeHero() {
         {/* Left — content */}
         <div className="hero-content">
           <p className="hero-eyebrow hero-anim hero-anim-d1">
-            Chicago · Film · Television · Commercial
+            Film · Television · Commercial
           </p>
 
           <h1 className="hero-name hero-anim hero-anim-d2">
@@ -94,7 +85,7 @@ export default function HomeHero() {
           <div className="quote-grid">
             <ScrollReveal>
               <blockquote className="quote-text">
-                &ldquo;Bringing unique stories and characters to life through design.&rdquo;
+                Bringing unique stories and characters to life through design.
               </blockquote>
             </ScrollReveal>
             <ScrollReveal delay={150}>

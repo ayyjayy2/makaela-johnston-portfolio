@@ -309,7 +309,6 @@ ul { list-style: none; }
 
 /* ── Marquee ───────────────────────────────────────────────────── */
 .marquee-wrap {
-  overflow: hidden;
   border-top: 1px solid rgba(131, 153, 88, 0.15);
   border-bottom: 1px solid rgba(131, 153, 88, 0.15);
   background-color: var(--midnight-green);
@@ -317,13 +316,10 @@ ul { list-style: none; }
 }
 .marquee-track {
   display: flex;
-  gap: 3.5rem;
-  width: max-content;
-  animation: marquee 30s linear infinite;
-}
-@keyframes marquee {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem 3.5rem;
+  padding: 0 2rem;
 }
 .marquee-item {
   font-family: var(--font-body);

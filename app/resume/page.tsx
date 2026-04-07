@@ -16,7 +16,7 @@ export default function Resume() {
       {/* ── Header ─────────────────────────────────────────────── */}
       <section
         className="section-dark"
-        style={{ paddingTop: 'calc(var(--nav-height) + clamp(3rem, 8vw, 6rem))' }}
+        style={{ paddingTop: 'calc(var(--nav-height) + clamp(3rem, 8vw, 6rem))', paddingBottom: 'clamp(1rem, 2vw, 1.5rem)' }}
       >
         <div className="container">
           <ScrollReveal>
