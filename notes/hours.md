@@ -17,9 +17,9 @@
 
 | Category | Hours |
 |----------|-------|
-| Development (Claude sessions) | ~9h |
+| Development (Claude sessions) | ~10h 15m |
 | Planning & Collaboration | — |
-| **Total** | **~9h** |
+| **Total** | **~10h 15m** |
 
 ---
 
@@ -27,9 +27,9 @@
 
 ### April 2026
 
-#### 2026-04-06 — Dev Sessions (~2h 47m)
+#### 2026-04-06 — Dev Sessions (~4h 3m)
 **Time 1:** 6:18 PM – 6:44 PM EDT (~26m)
-**Time 2:** 6:53 PM – 9:14 PM EDT (~2h 21m)
+**Time 2:** 6:53 PM – 10:55 PM EDT (~4h 2m)
 **Type:** Development
 
 **Work Completed:**
@@ -43,6 +43,10 @@
 - Footer redesign — combined CTA band + footer, quote in rosy-brown above contact links (email, Instagram, IMDb), responsive layout
 - About page select credits — replaced hardcoded stale array with dynamic slice from `data/resume.ts`
 - Firebase deploy — initialized Hosting, created `makaelajohnston` project, site live at https://makaelajohnston.web.app
+- Bloodline project page — added to narrative grid, YouTube video embed with autoplay (stashed, pending completion)
+- Home page cleanup — removed marquee strip, eyebrow text, scroll indicator, CTA buttons, moved tagline under role line
+- Footer cleanup — removed headline quote and copyright section
+- Firebase cleanUrls fix — resolved 404s on clean URLs across all pages
 
 ---
 
