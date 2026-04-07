@@ -695,7 +695,7 @@ ul { list-style: none; }
 }
 .section-mid {
   background-color: var(--midnight-green);
-  padding: clamp(2rem, 5vw, 4rem) 0 clamp(1rem, 2.5vw, 2rem);
+  padding: clamp(1.5rem, 3vw, 2.5rem) 0;
 }
 .eyebrow {
   font-family: var(--font-body);
