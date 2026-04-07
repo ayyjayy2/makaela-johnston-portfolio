@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import ScrollReveal from '../components/ScrollReveal';
-import { credits as allCredits } from '../data/resume';
 
 export const metadata: Metadata = {
   title: 'About',
@@ -15,8 +14,6 @@ const disciplines = [
   'Set Decoration Coordinator',
   'Art Department Coordinator',
 ];
-
-const credits = allCredits.slice(0, 5);
 
 export default function About() {
   return (
@@ -33,7 +30,7 @@ export default function About() {
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                 <p className="eyebrow">About</p>
                 <h1 className="section-title">
-                  <em>My story</em>
+                  <em>My Story</em>
                 </h1>
                 <div style={{ width: '2.5rem', height: '1px', backgroundColor: 'var(--rosy-brown)' }} />
               </div>
@@ -52,7 +49,7 @@ export default function About() {
                   and cinematic.
                 </p>
                 <div style={{ paddingTop: '0.5rem' }}>
-                  <Link href="/contact" className="btn-primary">Work Together</Link>
+                  <Link href="/contact" className="btn-primary">Contact</Link>
                 </div>
               </div>
             </ScrollReveal>
@@ -73,49 +70,22 @@ export default function About() {
             <ScrollReveal delay={150}>
               <div>
                 <p className="eyebrow" style={{ marginBottom: '1.5rem' }}>Disciplines</p>
-                <p className="disciplines-text">{disciplines.join(' · ')}</p>
+                <p className="disciplines-text">
+                  {disciplines.map((d, i) => (
+                    <span key={d}>
+                      <span style={{ whiteSpace: 'nowrap' }}>
+                        {d}{i < disciplines.length - 1 ? ' ·' : ''}
+                      </span>
+                      {i < disciplines.length - 1 ? ' ' : ''}
+                    </span>
+                  ))}
+                </p>
               </div>
             </ScrollReveal>
           </div>
         </div>
       </section>
 
-      {/* ── Credits ────────────────────────────────────────────── */}
-      <section className="section-dark">
-        <div className="container">
-          <ScrollReveal>
-            <div className="credits-header">
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                <p className="eyebrow">Select Credits</p>
-                <h2 className="section-title" style={{ fontSize: 'clamp(2rem, 4vw, 3rem)' }}>
-                  Featured Work
-                </h2>
-              </div>
-              <Link href="/resume" className="btn-ghost" style={{ paddingBottom: '0.5rem' }}>
-                Full Resume <span aria-hidden="true">→</span>
-              </Link>
-            </div>
-          </ScrollReveal>
-
-          <div>
-            {credits.map((credit, i) => (
-              <ScrollReveal key={i} delay={i * 60}>
-                <div className="credit-row">
-                  <div>
-                    <p className="credit-title">{credit.title}</p>
-                    <p className="credit-role">{credit.role}</p>
-                  </div>
-                  <div className="credit-meta">
-                    <span className="credit-type">{credit.type}</span>
-                    <span className="credit-studio">{credit.studio}</span>
-                    {credit.year ? <span className="credit-studio">{credit.year}</span> : null}
-                  </div>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
 
 
     </div>
