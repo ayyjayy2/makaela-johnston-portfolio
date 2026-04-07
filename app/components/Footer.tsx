@@ -40,28 +40,33 @@ export default function Footer() {
   return (
     <footer className="footer">
       <div className="container">
-        <div className="footer-inner">
 
+        {/* ── Main row: brand left, quote + links right ─────────── */}
+        <div className="footer-inner">
           <div className="footer-brand">
             <Link href="/" className="footer-wordmark">Makaela Johnston</Link>
             <p className="footer-tagline">Production Design &amp; Set Decoration</p>
           </div>
 
-          <nav aria-label="Contact links" className="footer-links">
-            {contactLinks.map(({ label, href, external, icon }) => (
-              <a
-                key={label}
-                href={href}
-                className="footer-link"
-                aria-label={label}
-                {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-              >
-                {icon}
-                <span>{label}</span>
-              </a>
-            ))}
-          </nav>
-
+          <div className="footer-right">
+            <p className="footer-headline">
+              Let&rsquo;s build something<br />worth watching.
+            </p>
+            <nav aria-label="Contact links" className="footer-links">
+              {contactLinks.map(({ label, href, external, icon }) => (
+                <a
+                  key={label}
+                  href={href}
+                  className="footer-link"
+                  aria-label={label}
+                  {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                >
+                  {icon}
+                  <span>{label}</span>
+                </a>
+              ))}
+            </nav>
+          </div>
         </div>
 
         <div className="footer-bottom">
@@ -69,6 +74,7 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} Makaela Johnston. All rights reserved.
           </p>
         </div>
+
       </div>
     </footer>
   );

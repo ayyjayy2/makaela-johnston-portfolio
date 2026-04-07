@@ -126,21 +126,6 @@ export default function About() {
         </div>
       </section>
 
-      {/* ── CTA ────────────────────────────────────────────────── */}
-      <ScrollReveal>
-        <div className="cta-band">
-          <div className="container">
-            <div className="cta-band-inner">
-              <h2 className="cta-band-heading">
-                Let&rsquo;s build something worth watching.
-              </h2>
-              <Link href="/contact" className="btn-primary-dark">
-                Get In Touch
-              </Link>
-            </div>
-          </div>
-        </div>
-      </ScrollReveal>
 
     </div>
   );
