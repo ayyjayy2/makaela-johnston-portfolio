@@ -17,9 +17,9 @@
 
 | Category | Hours |
 |----------|-------|
-| Development (Claude sessions) | ~6h 15m |
+| Development (Claude sessions) | ~9h |
 | Planning & Collaboration | — |
-| **Total** | **~6h 15m** |
+| **Total** | **~9h** |
 
 ---
 
@@ -27,9 +27,9 @@
 
 ### April 2026
 
-#### 2026-04-06 — Dev Sessions (in progress)
+#### 2026-04-06 — Dev Sessions (~2h 47m)
 **Time 1:** 6:18 PM – 6:44 PM EDT (~26m)
-**Time 2:** 6:53 PM – TBD EDT
+**Time 2:** 6:53 PM – 9:14 PM EDT (~2h 21m)
 **Type:** Development
 
 **Work Completed:**
@@ -38,6 +38,11 @@
 - Extracted credits data to `app/data/resume.ts` as single source of truth for page + PDF
 - Site-wide terminology fix — replaced all instances of "Production Designer" with "Production Design"
 - Added `.claude/` to `.gitignore` and removed accidentally committed internal files
+- Resume data overhaul — corrected all 21 credits with accurate roles, studios, and types
+- PDF improvements — fixed contact line alignment, added `|` delimiters, removed broken unicode icons, condensed for single-page fit
+- Footer redesign — combined CTA band + footer, quote in rosy-brown above contact links (email, Instagram, IMDb), responsive layout
+- About page select credits — replaced hardcoded stale array with dynamic slice from `data/resume.ts`
+- Firebase deploy — initialized Hosting, created `makaelajohnston` project, site live at https://makaelajohnston.web.app
 
 ---
 
