@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 };
 
 const disciplines = [
-  'Production Design',
+  'Production Designer',
   'Art Director',
   'Set Decoration Buyer',
   'Set Decoration Coordinator',
@@ -48,7 +48,7 @@ export default function About() {
                   through design — crafting environments that feel lived-in, purposeful,
                   and cinematic.
                 </p>
-                <div style={{ paddingTop: '0.5rem' }}>
+                <div style={{ paddingTop: '0.5rem', paddingBottom: '1.5rem' }}>
                   <Link href="/contact" className="btn-primary">Contact</Link>
                 </div>
               </div>
