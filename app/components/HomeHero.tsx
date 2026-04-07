@@ -1,17 +1,5 @@
 import Image from 'next/image';
-import Link from 'next/link';
-import ScrollReveal from './ScrollReveal';
 
-const marqueeItems = [
-  { label: 'Netflix',       highlight: false },
-  { label: 'Apple TV+',     highlight: true  },
-  { label: 'NBC',           highlight: false },
-  { label: 'FX · Hulu',    highlight: false },
-  { label: 'Amazon Prime',  highlight: true  },
-  { label: 'Spotify',       highlight: false },
-  { label: 'Chicago Bulls', highlight: true  },
-  { label: 'Toyota',        highlight: false },
-];
 
 export default function HomeHero() {
   return (
@@ -24,33 +12,23 @@ export default function HomeHero() {
 
         {/* Left — content */}
         <div className="hero-content">
-          <p className="hero-eyebrow hero-anim hero-anim-d1">
-            Film · Television · Commercial
+          <div className="hero-name-block hero-anim hero-anim-d2">
+            <h1 className="hero-name">
+              Makaela<br />
+              <em>Johnston</em>
+            </h1>
+
+            <div className="hero-role hero-anim hero-anim-d3">
+              <div className="hero-role-line" />
+              <p className="hero-role-text">Production Design &amp; Set Decoration</p>
+              <div className="hero-role-line" />
+            </div>
+          </div>
+
+          <p className="hero-tagline hero-anim hero-anim-d4">
+            Bringing unique stories and characters to life through design.
           </p>
 
-          <h1 className="hero-name hero-anim hero-anim-d2">
-            Makaela<br />
-            <em>Johnston</em>
-          </h1>
-
-          <div className="hero-role hero-anim hero-anim-d3">
-            <div className="hero-role-line" />
-            <p className="hero-role-text">Production Design &amp; Set Decoration</p>
-          </div>
-
-          <div className="hero-ctas hero-anim hero-anim-d4">
-            <Link href="/commercial" className="btn-primary">
-              Commercial
-            </Link>
-            <Link href="/narrative" className="btn-ghost">
-              Narrative <span aria-hidden="true">→</span>
-            </Link>
-          </div>
-
-          <div className="hero-scroll hero-anim hero-anim-d5" aria-hidden="true">
-            <div className="hero-scroll-line" />
-            <span className="hero-scroll-label">Scroll</span>
-          </div>
         </div>
 
         {/* Right — photo */}
@@ -65,43 +43,6 @@ export default function HomeHero() {
         </div>
       </section>
 
-      {/* ── Client marquee ────────────────────────────────────── */}
-      <div className="marquee-wrap" aria-hidden="true">
-        <div className="marquee-track">
-          {marqueeItems.map((item, i) => (
-            <span
-              key={i}
-              className={`marquee-item${item.highlight ? ' highlight' : ''}`}
-            >
-              {item.label}
-            </span>
-          ))}
-        </div>
-      </div>
-
-      {/* ── Quote ─────────────────────────────────────────────── */}
-      <section className="quote-section" aria-label="Introduction">
-        <div className="container">
-          <div className="quote-grid">
-            <ScrollReveal>
-              <blockquote className="quote-text">
-                Bringing unique stories and characters to life through design.
-              </blockquote>
-            </ScrollReveal>
-            <ScrollReveal delay={150}>
-              <div className="quote-meta">
-                <div className="quote-rule" />
-                <p className="quote-sub">
-                  Over a decade crafting environments for film, television, and commercial productions.
-                </p>
-                <Link href="/about" className="btn-ghost" style={{ marginTop: '0.5rem' }}>
-                  About Makaela <span aria-hidden="true">→</span>
-                </Link>
-              </div>
-            </ScrollReveal>
-          </div>
-        </div>
-      </section>
     </>
   );
 }
