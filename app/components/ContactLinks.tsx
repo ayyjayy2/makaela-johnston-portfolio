@@ -8,6 +8,7 @@ type ContactLink = {
   href: string;
   copyText: string;
   icon: React.ReactNode;
+  plainValue?: boolean;
 };
 
 function CopyButton({ text }: { text: string }) {
@@ -42,26 +43,38 @@ function CopyButton({ text }: { text: string }) {
   );
 }
 
+const ArrowIcon = () => (
+  <svg className="contact-link-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <path d="M7 17L17 7M17 7H7M17 7v10" />
+  </svg>
+);
+
 export default function ContactLinks({ links }: { links: ContactLink[] }) {
   return (
     <div className="contact-links">
-      {links.map(({ label, value, href, copyText, icon }) => (
+      {links.map(({ label, value, href, copyText, icon, plainValue }) => (
         <div key={label} className="contact-link-row">
-          <a
-            href={href}
-            className="contact-link-main"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <div className="contact-link-left">
-              <span className="contact-link-icon">{icon}</span>
-              <span className="contact-link-label eyebrow">{label}</span>
+          {plainValue ? (
+            <div className="contact-link-main contact-link-main--split">
+              <a href={href} target="_blank" rel="noopener noreferrer" className="contact-link-left contact-link-left--link">
+                <span className="contact-link-icon">{icon}</span>
+                <span className="contact-link-label eyebrow">{label}</span>
+              </a>
+              <span className="contact-link-value">{value}</span>
+              <a href={href} target="_blank" rel="noopener noreferrer" className="contact-link-arrow-link">
+                <ArrowIcon />
+              </a>
             </div>
-            <span className="contact-link-value">{value}</span>
-            <svg className="contact-link-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-              <path d="M7 17L17 7M17 7H7M17 7v10" />
-            </svg>
-          </a>
+          ) : (
+            <a href={href} className="contact-link-main" target="_blank" rel="noopener noreferrer">
+              <div className="contact-link-left">
+                <span className="contact-link-icon">{icon}</span>
+                <span className="contact-link-label eyebrow">{label}</span>
+              </div>
+              <span className="contact-link-value">{value}</span>
+              <ArrowIcon />
+            </a>
+          )}
           <CopyButton text={copyText} />
         </div>
       ))}
