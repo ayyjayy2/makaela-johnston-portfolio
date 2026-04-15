@@ -79,6 +79,33 @@ export const commercialProjects: ProjectMeta[] = [
 
 export const narrativeProjects: ProjectMeta[] = [
   {
+    title: '"Bloodline" x Alex Warren x Jelly Roll',
+    slug: 'bloodline',
+    category: 'narrative',
+    role: 'Production Designer',
+    year: '2025',
+    type: 'Music Video',
+    image: '/assets/narrative/bloodline/1HeaderPhoto.png',
+    videoUrl: 'https://www.youtube-nocookie.com/embed/UBtfcphWKBY?autoplay=1&rel=0&playsinline=1',
+    description: 'Production design for the music video "Bloodline" by Alex Warren featuring Jelly Roll.',
+    images: [
+      '/assets/narrative/bloodline/IMG_2045.JPG',
+      '/assets/narrative/bloodline/IMG_2148.JPG',
+      '/assets/narrative/bloodline/IMG_2228.JPG',
+      '/assets/narrative/bloodline/IMG_2231.JPG',
+      '/assets/narrative/bloodline/IMG_2256.JPG',
+      '/assets/narrative/bloodline/Screen Shot 2026-04-03 at 1.02.46 PM.png',
+      '/assets/narrative/bloodline/Screen Shot 2026-04-03 at 1.03.06 PM.png',
+      '/assets/narrative/bloodline/Screen Shot 2026-04-03 at 1.04.00 PM.png',
+      '/assets/narrative/bloodline/Screen Shot 2026-04-03 at 1.05.05 PM.png',
+      '/assets/narrative/bloodline/Screen Shot 2026-04-03 at 1.06.14 PM.png',
+      '/assets/narrative/bloodline/Screen Shot 2026-04-03 at 1.07.23 PM.png',
+      '/assets/narrative/bloodline/Screen Shot 2026-04-03 at 1.07.53 PM.png',
+      '/assets/narrative/bloodline/Screen Shot 2026-04-03 at 1.09.08 PM.png',
+      '/assets/narrative/bloodline/Screen Shot 2026-04-06 at 9.27.13 PM.png',
+    ],
+  },
+  {
     title: 'Saturn Return',
     slug: 'saturn-return',
     category: 'narrative',
