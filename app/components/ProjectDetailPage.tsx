@@ -13,11 +13,11 @@ export default function ProjectDetailPage({ category, slug }: Props) {
 
   const meta = [
     project.client   && { label: 'Client',    value: project.client   },
-    project.type     && { label: 'Type',       value: project.type     },
     project.year     && { label: 'Year',       value: project.year     },
     project.director && { label: 'Director',   value: project.director },
     project.studio   && { label: 'Studio',     value: project.studio   },
     { label: 'Role', value: project.role },
+    project.type     && { label: 'Type',       value: project.type     },
   ].filter(Boolean) as { label: string; value: string }[];
 
   return (
@@ -33,7 +33,6 @@ export default function ProjectDetailPage({ category, slug }: Props) {
             <Link href={`/${project.category}`} className="project-detail-back">
               ← {project.category === 'commercial' ? 'Commercial' : 'Narrative'}
             </Link>
-            <p className="eyebrow">{project.client}</p>
             <h1 className="section-title">{project.title}</h1>
             {meta.length > 0 && (
               <p className="project-detail-meta-line">
@@ -54,19 +53,30 @@ export default function ProjectDetailPage({ category, slug }: Props) {
               </a>
             )}
           </div>
-          <div className="project-detail-main-image">
-            {project.image ? (
-              <Image
-                src={project.image}
-                alt={project.title}
-                fill
-                style={{ objectFit: 'cover' }}
-                priority
+          {project.videoUrl ? (
+            <div className="project-detail-video">
+              <iframe
+                src={project.videoUrl}
+                title={project.title}
+                allow="autoplay; encrypted-media; picture-in-picture"
+                allowFullScreen
               />
-            ) : (
-              <div className="project-card-placeholder" />
-            )}
-          </div>
+            </div>
+          ) : (
+            <div className="project-detail-main-image">
+              {project.image ? (
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  style={{ objectFit: 'cover' }}
+                  priority
+                />
+              ) : (
+                <div className="project-card-placeholder" />
+              )}
+            </div>
+          )}
         </div>
       </section>
 

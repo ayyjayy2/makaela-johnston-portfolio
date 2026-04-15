@@ -9,6 +9,13 @@ export const metadata: Metadata = {
 
 const projects: Project[] = [
   {
+    title: '"Bloodline" x Alex Warren x Jelly Roll',
+    slug: 'bloodline',
+    category: 'narrative',
+    role: 'Production Designer',
+    image: '/assets/narrative/bloodline/1HeaderPhoto.png',
+  },
+  {
     title: 'Saturn Return',
     slug: 'saturn-return',
     category: 'narrative',
