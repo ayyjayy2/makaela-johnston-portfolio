@@ -9,6 +9,14 @@ export const metadata: Metadata = {
 
 const projects: Project[] = [
   {
+    title: 'Chicago Stars — Media Day 2026',
+    slug: 'chicago-stars-media-day',
+    category: 'commercial',
+    role: 'Production Design',
+    client: 'Chicago Stars',
+    image: '/assets/commercial/chicago-stars/1 Header Image.png',
+  },
+  {
     title: 'Spotify × Jack Harlow',
     slug: 'spotify-jack-harlow',
     category: 'commercial',
