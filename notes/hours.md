@@ -17,7 +17,7 @@
 
 | Category | Hours |
 |----------|-------|
-| Development (Claude sessions) | ~10h 15m |
+| Development (Claude sessions) | ~12h 43m |
 | Planning & Collaboration | — |
 | **Total** | **~10h 15m** |
 
@@ -27,12 +27,17 @@
 
 ### April 2026
 
-#### 2026-04-15 — Dev Session (in progress)
-**Time:** 6:44 PM – ongoing EDT
+#### 2026-04-15 — Dev Session (~2h 28m)
+**Time:** 6:44 PM – 9:12 PM EDT
 **Type:** Development
 
 **Work Completed:**
-- 
+- Bloodline project page — YouTube embed as hero, full photo gallery, updated title to `"Bloodline" x Alex Warren x Jelly Roll`, cleaned up meta line
+- Chicago Stars — Media Day 2026 — new commercial project page with Dropbox video embed, photo gallery, and resume entry
+- Responsive project card hover title — font scales with card width using container queries (no truncation)
+- Social link button designs — two options documented in notes for future client decision
+- Multiple deploys to Firebase Hosting
+
 
 ---
 
