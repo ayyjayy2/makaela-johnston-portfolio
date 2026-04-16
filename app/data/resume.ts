@@ -20,6 +20,15 @@ export const resumeInfo = {
 
 const creditData: Credit[] = [
   {
+    title: 'Chicago Stars — Media Day 2026',
+    role: 'Production Designer',
+    studio: 'Chicago Stars',
+    type: 'Media Day',
+    year: '2026',
+    sortYear: 2026,
+    category: 'Commercial',
+  },
+  {
     title: 'Neil Funk Ring of Honor',
     role: 'Production Design',
     studio: 'Chicago Bulls Media',
