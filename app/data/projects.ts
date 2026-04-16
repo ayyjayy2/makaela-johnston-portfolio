@@ -11,12 +11,41 @@ export type ProjectMeta = {
   studio?: string;
   type?: string;
   watchUrl?: string;
+  watchLinks?: { label: string; url: string }[];
   images?: string[];
   videoUrl?: string;
   description?: string;
 };
 
 export const commercialProjects: ProjectMeta[] = [
+  {
+    title: 'Chicago Stars — Media Day 2026',
+    slug: 'chicago-stars-media-day',
+    category: 'commercial',
+    role: 'Production Design',
+    client: 'Chicago Stars',
+    year: '2026',
+    type: 'Media Day',
+    image: '/assets/commercial/chicago-stars/1 Header Image.png',
+    videoUrl: 'https://www.dropbox.com/scl/fo/kl7db1fra82s1ecydppul/APyEAc5jEBzQ9g-PNiFVeGk/20260317_Chicago_Stars_Intro_Final.mp4?rlkey=xenia4clb9dst9t8eiqeiby0s&st=xzzeb0gc&raw=1',
+    description: 'Production design for the Chicago Stars Media Day 2026.',
+    images: [
+      '/assets/commercial/chicago-stars/Screen Shot 2026-04-15 at 3.49.25 PM.png',
+      '/assets/commercial/chicago-stars/Screen Shot 2026-04-15 at 3.50.20 PM.png',
+      '/assets/commercial/chicago-stars/Screen Shot 2026-04-15 at 3.50.49 PM.png',
+      '/assets/commercial/chicago-stars/Screen Shot 2026-04-15 at 3.51.10 PM.png',
+      '/assets/commercial/chicago-stars/Screen Shot 2026-04-15 at 3.51.45 PM.png',
+      '/assets/commercial/chicago-stars/Screen Shot 2026-04-15 at 3.52.14 PM.png',
+      '/assets/commercial/chicago-stars/Screen Shot 2026-04-15 at 3.53.15 PM.png',
+      '/assets/commercial/chicago-stars/Screen Shot 2026-04-15 at 3.53.48 PM.png',
+      '/assets/commercial/chicago-stars/Screen Shot 2026-04-15 at 3.54.12 PM.png',
+      '/assets/commercial/chicago-stars/Screen Shot 2026-04-15 at 3.54.59 PM.png',
+      '/assets/commercial/chicago-stars/Screen Shot 2026-04-15 at 3.55.15 PM.png',
+      '/assets/commercial/chicago-stars/Screen Shot 2026-04-15 at 3.55.25 PM.png',
+      '/assets/commercial/chicago-stars/Screen Shot 2026-04-15 at 3.55.47 PM.png',
+      '/assets/commercial/chicago-stars/BTS - put last.PNG',
+    ],
+  },
   {
     title: 'Spotify × Jack Harlow',
     slug: 'spotify-jack-harlow',
