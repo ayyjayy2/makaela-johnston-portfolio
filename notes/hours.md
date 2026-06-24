@@ -17,13 +17,27 @@
 
 | Category | Hours |
 |----------|-------|
-| Development (Claude sessions) | ~12h 43m |
+| Development (Claude sessions) | ~13h 15m |
 | Planning & Collaboration | — |
-| **Total** | **~10h 15m** |
+| **Total** | **~13h 15m** |
 
 ---
 
 ## Log
+
+### June 2026
+
+#### 2026-06-23 — Dev Session (~30m)
+**Time:** 10:25 PM – 10:55 PM EDT
+**Type:** Development
+
+**Work Completed:**
+- 4 new commercial project pages — Chicago Sky × 2026 Rebel Jersey (Production Design, Dropbox video, 11-image gallery), Chicago Bulls — Salute to Derrick Rose (Production Design, YouTube embed, 13-image gallery), Chicago Bulls — Derrick Rose Retirement Banner (Art Director, YouTube embed starting at 1:18, 11-image gallery), Chicago Bulls — Ring of Honor: Neil Funk (Production Design, YouTube embed, 5-image gallery)
+- Coming Soon UX — `ProjectCard` now renders a non-clickable "Coming Soon" state when a project has no header image (no `→` arrow, default cursor, `aria-label` for screen readers); covers 6 commercial + 5 narrative placeholders
+- Scroll-reveal load-consistency investigation — replaced `IntersectionObserver` reveal with mount-time reveal + `prefers-reduced-motion` rule (stashed for separate PR)
+- PR #60 merged to main, deployed to Firebase Hosting
+
+---
 
 ### April 2026
 
@@ -41,7 +55,7 @@
 
 ---
 
-#### 2026-04-06 — Dev Sessions (~4h 3m)
+#### 2026-04-06 — Dev Sessions (~4h 28m)
 **Time 1:** 6:18 PM – 6:44 PM EDT (~26m)
 **Time 2:** 6:53 PM – 10:55 PM EDT (~4h 2m)
 **Type:** Development
