@@ -669,6 +669,9 @@ ul { list-style: none; }
 .project-card-cta::after {
   content: '→';
 }
+/* Coming Soon state — no header image yet; suppress arrow + click affordance */
+.project-card.is-coming-soon { cursor: default; }
+.project-card-cta.is-coming-soon::after { content: none; }
 .project-card-image img {
   transition: transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
 }

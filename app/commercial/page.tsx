@@ -9,6 +9,38 @@ export const metadata: Metadata = {
 
 const projects: Project[] = [
   {
+    title: 'Chicago Sky — 2026 Rebel Jersey',
+    slug: 'chicago-sky-rebel-jersey',
+    category: 'commercial',
+    role: 'Production Design',
+    client: 'Chicago Sky',
+    image: '/assets/commercial/chicago-sky-rebel-jersey/1.png',
+  },
+  {
+    title: 'Chicago Bulls — Salute to Derrick Rose',
+    slug: 'chicago-bulls-salute-derrick-rose',
+    category: 'commercial',
+    role: 'Production Design',
+    client: 'Chicago Bulls',
+    image: '/assets/commercial/chicago-bulls-salute-derrick-rose/1 Header.png',
+  },
+  {
+    title: 'Chicago Bulls — Derrick Rose Retirement Banner',
+    slug: 'chicago-bulls-derrick-rose-retirement-banner',
+    category: 'commercial',
+    role: 'Art Director',
+    client: 'Chicago Bulls',
+    image: '/assets/commercial/chicago-bulls-derrick-rose-retirement-banner/1 Header.png',
+  },
+  {
+    title: 'Chicago Bulls — Ring of Honor: Neil Funk',
+    slug: 'chicago-bulls-ring-of-honor-neil-funk',
+    category: 'commercial',
+    role: 'Production Design',
+    client: 'Chicago Bulls',
+    image: '/assets/commercial/chicago-bulls-ring-of-honor-neil-funk/1 Header.png',
+  },
+  {
     title: 'Chicago Stars — Media Day 2026',
     slug: 'chicago-stars-media-day',
     category: 'commercial',
