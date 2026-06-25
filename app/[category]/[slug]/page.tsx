@@ -116,17 +116,21 @@ export default function ProjectDetail({ params }: Props) {
         <section className="section-dark" style={{ paddingTop: 0 }}>
           <div className="container">
             <div className="project-detail-gallery">
-              {project.images.map((src, i) => (
-                <div key={i} className="project-detail-gallery-item">
-                  <Image
-                    src={src}
-                    alt={`${project.title} — image ${i + 1}`}
-                    fill
-                    style={{ objectFit: 'cover' }}
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                  />
-                </div>
-              ))}
+              {project.images.map((item, i) => {
+                const src = typeof item === 'string' ? item : item.src;
+                const position = typeof item === 'string' ? undefined : item.position;
+                return (
+                  <div key={i} className="project-detail-gallery-item">
+                    <Image
+                      src={src}
+                      alt={`${project.title} — image ${i + 1}`}
+                      fill
+                      style={{ objectFit: 'cover', objectPosition: position }}
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
+                  </div>
+                );
+              })}
             </div>
           </div>
         </section>

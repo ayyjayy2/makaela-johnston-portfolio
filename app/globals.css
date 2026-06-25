@@ -448,6 +448,19 @@ ul { list-style: none; }
   height: 100%;
   border: none;
 }
+/* Instagram reels are vertical — give them a centered portrait container
+   instead of the 16:9 box used for landscape video. */
+.project-detail-video.is-instagram {
+  aspect-ratio: auto;
+  max-width: 360px;
+  margin-inline: auto;
+  background-color: transparent;
+}
+.project-detail-video.is-instagram iframe {
+  position: static;
+  width: 100%;
+  height: 640px;
+}
 .project-detail-watch-links {
   display: flex;
   gap: 0.75rem;
