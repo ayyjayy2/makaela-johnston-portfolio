@@ -1,56 +1,18 @@
 import type { Metadata } from 'next';
-import ProjectCard, { type Project } from '../components/ProjectCard';
+import ProjectCard from '../components/ProjectCard';
 import ScrollReveal from '../components/ScrollReveal';
+import { narrativeProjects } from '../data/projects';
 
 export const metadata: Metadata = {
   title: 'Narrative — Makaela Johnston',
   description: 'Narrative production design work by Makaela Johnston — credits include Netflix, Apple TV+, NBC, FX/Hulu, and Amazon Prime.',
 };
 
-const projects: Project[] = [
-  {
-    title: '"Bloodline" x Alex Warren x Jelly Roll',
-    slug: 'bloodline',
-    category: 'narrative',
-    role: 'Production Designer',
-    image: '/assets/narrative/bloodline/1HeaderPhoto.png',
-  },
-  {
-    title: 'Saturn Return',
-    slug: 'saturn-return',
-    category: 'narrative',
-    role: 'Set Decoration Buyer',
-    client: 'Netflix · Feature Film',
-  },
-  {
-    title: 'Dark Matter',
-    slug: 'dark-matter',
-    category: 'narrative',
-    role: 'Set Decoration Coordinator',
-    client: 'Apple TV+ · S1–S2',
-  },
-  {
-    title: 'Chicago Fire',
-    slug: 'chicago-fire',
-    category: 'narrative',
-    role: 'Set Decorator',
-    client: 'NBC · Season 12',
-  },
-  {
-    title: 'Justified: City Primeval',
-    slug: 'justified-city-primeval',
-    category: 'narrative',
-    role: 'Set Decorator',
-    client: 'FX / Hulu · Limited Series',
-  },
-  {
-    title: 'Light Years',
-    slug: 'light-years',
-    category: 'narrative',
-    role: 'Art Dept Coordinator',
-    client: 'Amazon Prime · S1',
-  },
-];
+// Hide "Coming Soon" cards (projects with no header image yet), but keep the
+// Snickers teaser card visible.
+const projects = narrativeProjects.filter(
+  (p) => p.image || p.slug === 'snickers-world-cup',
+);
 
 export default function Narrative() {
   return (

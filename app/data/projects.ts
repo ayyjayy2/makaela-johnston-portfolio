@@ -1,3 +1,9 @@
+/**
+ * A gallery image is either a plain path, or an object with a path plus a CSS
+ * object-position to control how it's cropped within the gallery cell.
+ */
+export type GalleryImage = string | { src: string; position?: string };
+
 export type ProjectMeta = {
   title: string;
   slug: string;
@@ -5,6 +11,8 @@ export type ProjectMeta = {
   role: string;
   client?: string;
   image?: string;
+  /** CSS object-position for the card/hero image (e.g. 'top'). Defaults to center. */
+  imagePosition?: string;
   // Detail page fields
   year?: string;
   director?: string;
@@ -12,7 +20,7 @@ export type ProjectMeta = {
   type?: string;
   watchUrl?: string;
   watchLinks?: { label: string; url: string }[];
-  images?: string[];
+  images?: GalleryImage[];
   videoUrl?: string;
   description?: string;
 };
@@ -22,20 +30,20 @@ export const commercialProjects: ProjectMeta[] = [
     title: 'Chicago Sky — 2026 Rebel Jersey',
     slug: 'chicago-sky-rebel-jersey',
     category: 'commercial',
-    role: 'Production Design',
+    role: 'Production Designer',
     client: 'Chicago Sky',
     year: '2026',
-    type: 'Brand Reveal',
-    image: '/assets/commercial/chicago-sky-rebel-jersey/1.png',
+    image: '/assets/commercial/chicago-sky-rebel-jersey/2.png',
+    imagePosition: 'center 8%',
     videoUrl: 'https://www.dropbox.com/scl/fi/cxozgjlocmr0rkidm22iz/ChicagoSky_Rebel-Jersey_Reveal_WEB_23.976_1080_H264_Mixed_16x9_FINAL.mov?rlkey=5drp444qfoqmzjqgsf5n5xhmc&e=2&raw=1',
-    description: 'Production design for the Chicago Sky 2026 Rebel Jersey reveal.',
     images: [
       '/assets/commercial/chicago-sky-rebel-jersey/2.png',
-      '/assets/commercial/chicago-sky-rebel-jersey/3.png',
-      '/assets/commercial/chicago-sky-rebel-jersey/4.png',
-      '/assets/commercial/chicago-sky-rebel-jersey/5.png',
-      '/assets/commercial/chicago-sky-rebel-jersey/6.png',
-      '/assets/commercial/chicago-sky-rebel-jersey/7.png',
+      { src: '/assets/commercial/chicago-sky-rebel-jersey/1.png', position: 'center 8%' },
+      { src: '/assets/commercial/chicago-sky-rebel-jersey/3.png', position: 'top' },
+      { src: '/assets/commercial/chicago-sky-rebel-jersey/4.png', position: 'top' },
+      { src: '/assets/commercial/chicago-sky-rebel-jersey/5.png', position: 'top' },
+      { src: '/assets/commercial/chicago-sky-rebel-jersey/6.png', position: 'top' },
+      { src: '/assets/commercial/chicago-sky-rebel-jersey/7.png', position: 'top' },
       '/assets/commercial/chicago-sky-rebel-jersey/8.JPG',
       '/assets/commercial/chicago-sky-rebel-jersey/9.JPG',
       '/assets/commercial/chicago-sky-rebel-jersey/10.JPG',
@@ -47,14 +55,13 @@ export const commercialProjects: ProjectMeta[] = [
     title: 'Chicago Bulls — Salute to Derrick Rose',
     slug: 'chicago-bulls-salute-derrick-rose',
     category: 'commercial',
-    role: 'Production Design',
+    role: 'Production Designer',
     client: 'Chicago Bulls',
     year: '2026',
-    type: 'Tribute Feature',
     image: '/assets/commercial/chicago-bulls-salute-derrick-rose/1 Header.png',
     videoUrl: 'https://www.youtube-nocookie.com/embed/US7VFL9cXTk?autoplay=1&rel=0&playsinline=1',
-    description: 'Production design for the Chicago Bulls\' Salute to Derrick Rose tribute feature.',
     images: [
+      '/assets/commercial/chicago-bulls-salute-derrick-rose/1 Header.png',
       '/assets/commercial/chicago-bulls-salute-derrick-rose/2.png',
       '/assets/commercial/chicago-bulls-salute-derrick-rose/3.png',
       '/assets/commercial/chicago-bulls-salute-derrick-rose/4.png',
@@ -77,11 +84,10 @@ export const commercialProjects: ProjectMeta[] = [
     role: 'Art Director',
     client: 'Chicago Bulls',
     year: '2026',
-    type: 'Tribute Feature',
     image: '/assets/commercial/chicago-bulls-derrick-rose-retirement-banner/1 Header.png',
     videoUrl: 'https://www.youtube-nocookie.com/embed/Px51WcL-Pw0?autoplay=1&rel=0&playsinline=1&start=78',
-    description: 'Art direction for the Chicago Bulls\' Derrick Rose Retirement Banner tribute feature.',
     images: [
+      '/assets/commercial/chicago-bulls-derrick-rose-retirement-banner/1 Header.png',
       '/assets/commercial/chicago-bulls-derrick-rose-retirement-banner/2.png',
       '/assets/commercial/chicago-bulls-derrick-rose-retirement-banner/3.png',
       '/assets/commercial/chicago-bulls-derrick-rose-retirement-banner/4.png',
@@ -99,14 +105,13 @@ export const commercialProjects: ProjectMeta[] = [
     title: 'Chicago Bulls — Ring of Honor: Neil Funk',
     slug: 'chicago-bulls-ring-of-honor-neil-funk',
     category: 'commercial',
-    role: 'Production Design',
+    role: 'Production Designer',
     client: 'Chicago Bulls',
     year: '2026',
-    type: 'Tribute Feature',
     image: '/assets/commercial/chicago-bulls-ring-of-honor-neil-funk/1 Header.png',
     videoUrl: 'https://www.youtube-nocookie.com/embed/LpuRUZbW5a0?autoplay=1&rel=0&playsinline=1',
-    description: 'Production design for the Chicago Bulls\' Ring of Honor tribute to Neil Funk.',
     images: [
+      '/assets/commercial/chicago-bulls-ring-of-honor-neil-funk/1 Header.png',
       '/assets/commercial/chicago-bulls-ring-of-honor-neil-funk/2.png',
       '/assets/commercial/chicago-bulls-ring-of-honor-neil-funk/3.png',
       '/assets/commercial/chicago-bulls-ring-of-honor-neil-funk/4.png',
@@ -121,9 +126,9 @@ export const commercialProjects: ProjectMeta[] = [
     role: 'Production Designer',
     year: '2026',
     image: '/assets/commercial/chicago-stars/1 Header Image.png',
-    videoUrl: 'https://www.dropbox.com/scl/fo/kl7db1fra82s1ecydppul/APyEAc5jEBzQ9g-PNiFVeGk/20260317_Chicago_Stars_Intro_Final.mp4?rlkey=xenia4clb9dst9t8eiqeiby0s&st=xzzeb0gc&raw=1',
-    description: 'Production design for the Chicago Stars Media Day 2026.',
+    videoUrl: 'https://www.instagram.com/reel/DWKZb0rhs5X/embed',
     images: [
+      '/assets/commercial/chicago-stars/1 Header Image.png',
       '/assets/commercial/chicago-stars/Screen Shot 2026-04-15 at 3.49.25 PM.png',
       '/assets/commercial/chicago-stars/Screen Shot 2026-04-15 at 3.50.20 PM.png',
       '/assets/commercial/chicago-stars/Screen Shot 2026-04-15 at 3.50.49 PM.png',
@@ -141,62 +146,160 @@ export const commercialProjects: ProjectMeta[] = [
     ],
   },
   {
+    title: 'Chicago Sky — 2026 Hype Intro',
+    slug: 'chicago-sky-hype-intro',
+    category: 'commercial',
+    role: 'Production Designer',
+    client: 'Chicago Sky',
+    year: '2026',
+    image: '/assets/commercial/chicago-sky-hype-intro/1.png',
+    watchUrl: 'https://sky.wnba.com/watch/video/chicago-sky-2026-hype-intro',
+    images: [
+      '/assets/commercial/chicago-sky-hype-intro/2.png',
+      '/assets/commercial/chicago-sky-hype-intro/3.png',
+      '/assets/commercial/chicago-sky-hype-intro/4.png',
+      '/assets/commercial/chicago-sky-hype-intro/5.png',
+    ],
+  },
+  {
+    title: 'ESPN × Principal Financial',
+    slug: 'espn-principal-financial',
+    category: 'commercial',
+    role: 'Property Master/Set Dresser',
+    client: 'ESPN',
+    type: 'Commercial',
+    image: '/assets/commercial/espn-principal-financial/1.png',
+    videoUrl: 'https://www.youtube-nocookie.com/embed/C9hNjtRSZuE?autoplay=1&rel=0&playsinline=1',
+    images: [
+      '/assets/commercial/espn-principal-financial/1.png',
+      '/assets/commercial/espn-principal-financial/2.png',
+      '/assets/commercial/espn-principal-financial/3.png',
+      '/assets/commercial/espn-principal-financial/4.png',
+      '/assets/commercial/espn-principal-financial/5.png',
+      '/assets/commercial/espn-principal-financial/6.png',
+      '/assets/commercial/espn-principal-financial/7.png',
+    ],
+  },
+  {
+    title: 'Dial Soap',
+    slug: 'dial-soap',
+    category: 'commercial',
+    role: 'Production Designer',
+    client: 'Dial',
+    type: 'Commercial',
+    image: '/assets/commercial/dial-soap/1.jpeg',
+    videoUrl: 'https://www.youtube-nocookie.com/embed/oVSlPvKkvQE?autoplay=1&rel=0&playsinline=1',
+    images: [
+      '/assets/commercial/dial-soap/1.jpeg',
+      '/assets/commercial/dial-soap/2.png',
+      '/assets/commercial/dial-soap/3.png',
+      '/assets/commercial/dial-soap/4.png',
+      '/assets/commercial/dial-soap/5.png',
+      '/assets/commercial/dial-soap/6.png',
+      '/assets/commercial/dial-soap/7.png',
+      '/assets/commercial/dial-soap/8.png',
+      '/assets/commercial/dial-soap/9.png',
+      '/assets/commercial/dial-soap/10.png',
+      '/assets/commercial/dial-soap/11.png',
+      '/assets/commercial/dial-soap/12.jpeg',
+      '/assets/commercial/dial-soap/13.jpeg',
+    ],
+  },
+  {
     title: 'Spotify × Jack Harlow',
     slug: 'spotify-jack-harlow',
     category: 'commercial',
-    role: 'Production Design',
+    role: 'Set Decorator',
     client: 'Spotify',
     year: '2021',
     studio: 'Pyramid Studios',
     type: 'TikTok Ad',
-    description: 'Production design for Spotify Wrapped featuring Jack Harlow.',
+    image: '/assets/commercial/spotify-jack-harlow/1.png',
+    watchUrl: 'https://www.tiktok.com/@spotify/video/7039814959093517573',
+    images: [
+      '/assets/commercial/spotify-jack-harlow/2.JPG',
+      '/assets/commercial/spotify-jack-harlow/3.JPG',
+      '/assets/commercial/spotify-jack-harlow/4.JPG',
+      '/assets/commercial/spotify-jack-harlow/5.JPG',
+      '/assets/commercial/spotify-jack-harlow/6.JPG',
+      '/assets/commercial/spotify-jack-harlow/7.JPG',
+      '/assets/commercial/spotify-jack-harlow/8.JPG',
+    ],
   },
   {
     title: 'Chicago Blackhawks — Night at the United Center',
     slug: 'chicago-blackhawks-united-center',
     category: 'commercial',
-    role: 'Production Design',
+    role: 'Production Designer',
     client: 'Chicago Blackhawks',
     year: '2025',
     type: 'Social Media Commercial',
-    description: 'Production design for a social media commercial for the Chicago Blackhawks.',
+    image: '/assets/commercial/chicago-blackhawks-united-center/1.png',
+    videoUrl: 'https://www.youtube-nocookie.com/embed/kNalGVVDGTU?autoplay=1&rel=0&playsinline=1',
+    images: [
+      '/assets/commercial/chicago-blackhawks-united-center/1.png',
+      '/assets/commercial/chicago-blackhawks-united-center/2.png',
+      '/assets/commercial/chicago-blackhawks-united-center/3.png',
+      '/assets/commercial/chicago-blackhawks-united-center/4.png',
+      '/assets/commercial/chicago-blackhawks-united-center/5.png',
+      '/assets/commercial/chicago-blackhawks-united-center/6.png',
+      '/assets/commercial/chicago-blackhawks-united-center/7.png',
+      '/assets/commercial/chicago-blackhawks-united-center/8.png',
+      '/assets/commercial/chicago-blackhawks-united-center/9.png',
+    ],
   },
   {
     title: 'Chicago Bulls 1966 × Just Don',
     slug: 'chicago-bulls-just-don',
     category: 'commercial',
-    role: 'Production Design',
+    role: 'Production Designer',
     client: 'Chicago Bulls',
     year: '2023',
     type: 'Multimedia Ad',
-    description: 'Set design for the Chicago Bulls 1966 × Just Don multimedia advertisement.',
   },
   {
     title: 'A Kernel of Truth: A Benny the Bull Film',
     slug: 'benny-the-bull',
     category: 'commercial',
-    role: 'Production Design',
+    role: 'Production Designer',
     client: 'Chicago Bulls',
     type: 'Short Film',
-    description: 'Production design for the Chicago Bulls\' short film featuring Benny the Bull.',
   },
   {
     title: 'The Crab Place — Crab Cake Eggs Benny',
     slug: 'the-crab-place',
     category: 'commercial',
-    role: 'Production Design',
+    role: 'Production Designer',
     client: 'The Crab Place',
     type: 'Commercial',
-    description: 'Production design for The Crab Place commercial.',
   },
   {
     title: 'Toyota — Naughty List',
     slug: 'toyota-naughty-list',
     category: 'commercial',
-    role: 'Production Design',
+    role: 'Set Decoration Buyer/Set Dresser',
     client: 'Toyota',
     type: 'Commercial',
-    description: 'Production design for Toyota\'s Naughty List commercial.',
+    image: '/assets/commercial/toyota-naughty-list/1.png',
+    videoUrl: 'https://www.youtube-nocookie.com/embed/3g0mkveQuFc?autoplay=1&rel=0&playsinline=1',
+    images: [
+      '/assets/commercial/toyota-naughty-list/1.png',
+      '/assets/commercial/toyota-naughty-list/2.png',
+      '/assets/commercial/toyota-naughty-list/3.png',
+      '/assets/commercial/toyota-naughty-list/4.png',
+      '/assets/commercial/toyota-naughty-list/5.png',
+      '/assets/commercial/toyota-naughty-list/6.png',
+      '/assets/commercial/toyota-naughty-list/7.png',
+      '/assets/commercial/toyota-naughty-list/8.png',
+    ],
+  },
+  {
+    title: 'Snickers — Final World Cup',
+    slug: 'snickers-world-cup',
+    category: 'commercial',
+    role: 'Production Designer',
+    client: 'Snickers',
+    type: 'Commercial',
   },
 ];
 
@@ -210,8 +313,8 @@ export const narrativeProjects: ProjectMeta[] = [
     type: 'Music Video',
     image: '/assets/narrative/bloodline/1HeaderPhoto.png',
     videoUrl: 'https://www.youtube-nocookie.com/embed/UBtfcphWKBY?autoplay=1&rel=0&playsinline=1',
-    description: 'Production design for the music video "Bloodline" by Alex Warren featuring Jelly Roll.',
     images: [
+      '/assets/narrative/bloodline/1HeaderPhoto.png',
       '/assets/narrative/bloodline/IMG_2045.JPG',
       '/assets/narrative/bloodline/IMG_2148.JPG',
       '/assets/narrative/bloodline/IMG_2228.JPG',
@@ -229,6 +332,27 @@ export const narrativeProjects: ProjectMeta[] = [
     ],
   },
   {
+    title: 'Deli Boys',
+    slug: 'deli-boys',
+    category: 'narrative',
+    role: 'Set Decoration Buyer',
+    client: 'Hulu',
+    year: '2025',
+    type: 'Series',
+    image: '/assets/narrative/deli-boys/1.png',
+    videoUrl: 'https://www.youtube-nocookie.com/embed/Cd2oyZNNILQ?autoplay=1&rel=0&playsinline=1',
+    images: [
+      '/assets/narrative/deli-boys/1.png',
+      '/assets/narrative/deli-boys/2.png',
+      '/assets/narrative/deli-boys/3.png',
+      '/assets/narrative/deli-boys/4.png',
+      '/assets/narrative/deli-boys/5.png',
+      '/assets/narrative/deli-boys/6.png',
+      '/assets/narrative/deli-boys/7.png',
+      '/assets/narrative/deli-boys/8.png',
+    ],
+  },
+  {
     title: 'Saturn Return',
     slug: 'saturn-return',
     category: 'narrative',
@@ -236,7 +360,6 @@ export const narrativeProjects: ProjectMeta[] = [
     client: 'Netflix',
     year: '2025',
     type: 'Feature Film',
-    description: 'Set decoration buying for the Netflix feature film Saturn Return.',
   },
   {
     title: 'Dark Matter',
@@ -248,7 +371,6 @@ export const narrativeProjects: ProjectMeta[] = [
     type: 'Series · S1–S2',
     studio: 'Sony Pictures',
     director: 'Patricio Farrell',
-    description: 'Set decoration coordination for both seasons of Apple TV+\'s Dark Matter.',
   },
   {
     title: 'Chicago Fire',
@@ -258,7 +380,6 @@ export const narrativeProjects: ProjectMeta[] = [
     client: 'NBC',
     year: '2024',
     type: 'Series · Season 12',
-    description: 'Set decoration for Season 12 of NBC\'s Chicago Fire.',
   },
   {
     title: 'Justified: City Primeval',
@@ -270,7 +391,6 @@ export const narrativeProjects: ProjectMeta[] = [
     type: 'Limited Series',
     studio: 'Sony Pictures',
     director: 'Marek Dobrowolski',
-    description: 'Art department coordination for the FX/Hulu limited series Justified: City Primeval.',
   },
   {
     title: 'Light Years',
@@ -282,7 +402,6 @@ export const narrativeProjects: ProjectMeta[] = [
     type: 'Series · S1',
     studio: 'Legendary Studios',
     director: 'Scott Kuzio',
-    description: 'Art department coordination for Season 1 of Amazon Prime\'s Light Years.',
   },
 ];
 

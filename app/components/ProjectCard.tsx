@@ -8,9 +8,10 @@ export type Project = {
   role: string;
   client?: string;
   image?: string;
+  imagePosition?: string;
 };
 
-export default function ProjectCard({ title, slug, category, image }: Project) {
+export default function ProjectCard({ title, slug, category, image, imagePosition }: Project) {
   const href = `/${category}/${slug}`;
   // No header image means there's no real detail page content yet — show a
   // "Coming Soon" state and make the card non-clickable so users don't land on
@@ -24,7 +25,7 @@ export default function ProjectCard({ title, slug, category, image }: Project) {
           src={image}
           alt={title}
           fill
-          style={{ objectFit: 'cover' }}
+          style={{ objectFit: 'cover', objectPosition: imagePosition }}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
       ) : (

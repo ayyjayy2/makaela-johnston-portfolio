@@ -11,6 +11,12 @@ export default function ProjectDetailPage({ category, slug }: Props) {
 
   const { prev, next } = getAdjacentProjects(project);
 
+  // Instagram/YouTube are iframe embeds; anything else (a direct file URL) plays
+  // in a <video> element. Instagram reels are vertical, so they get a portrait box.
+  const isInstagramVideo = !!project.videoUrl && project.videoUrl.includes('instagram.com');
+  const isIframeVideo =
+    !!project.videoUrl && (project.videoUrl.includes('youtube') || isInstagramVideo);
+
   const meta = [
     project.client   && { label: 'Client',    value: project.client   },
     project.year     && { label: 'Year',       value: project.year     },
@@ -54,8 +60,8 @@ export default function ProjectDetailPage({ category, slug }: Props) {
             )}
           </div>
           {project.videoUrl ? (
-            <div className="project-detail-video">
-              {project.videoUrl.includes('youtube') ? (
+            <div className={`project-detail-video${isInstagramVideo ? ' is-instagram' : ''}`}>
+              {isIframeVideo ? (
                 <iframe
                   src={project.videoUrl}
                   title={project.title}
@@ -79,7 +85,7 @@ export default function ProjectDetailPage({ category, slug }: Props) {
                   src={project.image}
                   alt={project.title}
                   fill
-                  style={{ objectFit: 'cover' }}
+                  style={{ objectFit: 'cover', objectPosition: project.imagePosition }}
                   priority
                 />
               ) : (
@@ -131,17 +137,21 @@ export default function ProjectDetailPage({ category, slug }: Props) {
         <section className="section-dark" style={{ paddingTop: 0 }}>
           <div className="container">
             <div className="project-detail-gallery">
-              {project.images.map((src, i) => (
-                <div key={i} className="project-detail-gallery-item">
-                  <Image
-                    src={src}
-                    alt={`${project.title} — image ${i + 1}`}
-                    fill
-                    style={{ objectFit: 'cover' }}
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                  />
-                </div>
-              ))}
+              {project.images.map((item, i) => {
+                const src = typeof item === 'string' ? item : item.src;
+                const position = typeof item === 'string' ? undefined : item.position;
+                return (
+                  <div key={i} className="project-detail-gallery-item">
+                    <Image
+                      src={src}
+                      alt={`${project.title} — image ${i + 1}`}
+                      fill
+                      style={{ objectFit: 'cover', objectPosition: position }}
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
+                  </div>
+                );
+              })}
             </div>
           </div>
         </section>
