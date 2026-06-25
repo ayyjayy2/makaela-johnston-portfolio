@@ -17,15 +17,33 @@
 
 | Category | Hours |
 |----------|-------|
-| Development (Claude sessions) | ~13h 15m |
+| Development (Claude sessions) | ~14h 35m |
 | Planning & Collaboration | — |
-| **Total** | **~13h 15m** |
+| **Total** | **~14h 35m** |
 
 ---
 
 ## Log
 
 ### June 2026
+
+#### 2026-06-24 — Dev Session (~1h 20m)
+**Time:** 10:25 PM – 11:45 PM EDT
+**Type:** Development
+
+**Work Completed:**
+- New commercial projects — Dial Soap (Production Designer, YouTube embed, 12-image gallery), ESPN × Principal Financial (Property Master/Set Dresser, YouTube embed), Chicago Sky 2026 Hype Intro (Production Designer, header + watch link), Snickers — Final World Cup (Coming Soon teaser)
+- New narrative project — Deli Boys (Set Decoration Buyer, Hulu, YouTube embed, header + 7 stills)
+- Fleshed out Spotify × Jack Harlow, Chicago Blackhawks, and Toyota cards with header images, galleries, and video/watch links (HEIC→JPG conversion for Spotify)
+- Instagram embed support — generalized the detail-page player to handle Instagram reels + YouTube iframes + direct video files; portrait container for reels; Chicago Stars Media Day now embeds an Instagram reel (Dropbox folder link couldn't stream)
+- Each video project's header photo now also shown in its gallery
+- Rebel Jersey polish — per-image gallery crops (`object-position`), card thumbnail swap (2.png), removed "Brand Reveal" label + redundant description
+- Grid refactor — commercial + narrative pages now render from shared `projects.ts` data (removed duplicate hardcoded arrays); Coming Soon cards hidden except Snickers
+- Resume — replaced dynamic `@react-pdf/renderer` download with the latest static PDF (removed `ResumePDF`); added Brightspeed + Babybell Cheese credits; roles to agentive form (Production Designer, etc.); Snickers → Set Decorator and Toyota → Set Decoration Buyer on resume (project pages kept as-is)
+- Site-wide cleanup — removed all redundant project descriptions and "Tribute Feature" / "Brand Reveal" / "Hype Video" type labels
+- PR #62 merged to main, deployed to Firebase Hosting
+
+---
 
 #### 2026-06-23 — Dev Session (~30m)
 **Time:** 10:25 PM – 10:55 PM EDT
